@@ -27,6 +27,8 @@ p {
   border: 2px solid black;
 }
 
+/* BUTTONS */
+
 button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
@@ -46,4 +48,64 @@ button:hover {
   background-color: #d3a625;
   border: 0.2em solid #d3a625;
   box-shadow: none;
+}
+/* POPUP */
+#popop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  /* display: none; */
+  overflow: scroll;
+}
+
+#popop article {
+  /* display: none; */
+  width: 60vw;
+  height: 80vh;
+  margin: 4rem auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+#close {
+  position: fixed;
+  font-family: "Montserrat";
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #ae0001;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 10px;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #ae0001;
+  top: 5vw;
+  right: 21vw;
+}
+#close:hover {
+  color: white;
+  background-color: black;
+  border: 0.2em solid black;
+  box-shadow: none;
+}
+
+#popop h2 {
+  margin-left: 20px;
+  color: #d3a625;
+}
+
+#popop p {
+  font-family: "Montserrat";
+  margin-left: 20px;
+  color: #d3a625;
+}
+
+#popop img {
+  width: 60%;
+  margin: 20px;
 }

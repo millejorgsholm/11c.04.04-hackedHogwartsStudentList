@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hacked Hogwarts Studentlist - assignment</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="search" placeholder="Search.." id="search" name="search" />
+      </nav>
+    </header>
+    <h1>Hogwarts Student List</h1>
+    <main>
+      <!-- Filtering -->
+      <div id="filterSortContainer">
+        <div id="filterContainer">
+          <p>Filter:</p>
+          <button
+            class="filterButtons chosen"
+            data-action="filter"
+            data-filter="fullStudentList"
+          >
+            All students
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="expelled"
+          >
+            Expelled
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="nonexpelled"
+          >
+            Non-expelled
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="fullBlood"
+          >
+            Full-Blood
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="halfBlood"
+          >
+            Half-Blood
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="gryffindor"
+          >
+            Gryffindor
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="slytherin"
+          >
+            Slytherin
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="hufflepuff"
+          >
+            Hufflepuff
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="ravenclaw"
+          >
+            Ravenclaw
+          </button>
+          <button
+            class="filterButtons"
+            data-action="filter"
+            data-filter="prefects"
+          >
+            Prefect students
+          </button>
+        </div>
+
+        <!-- Sorting the list -->
+        <p>Sort:</p>
+        <div id="sortContainer">
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="firstName"
+          >
+            First name
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="lastName"
+          >
+            Last name
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="gryffindor"
+          >
+            Gryffindor
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="slytherin"
+          >
+            Slytherin
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="hufflepuff"
+          >
+            Hufflepuff
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="ravenclaw"
+          >
+            Ravenclaw
+          </button>
+          <button
+            class="sortButtons"
+            data-action="filter"
+            data-filter="prefects"
+          >
+            Prefects
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

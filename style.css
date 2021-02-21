@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-family: "Montserrat";
+  color: #1a472a;
+}
+
+#search {
+  margin: 10px 10px;
+  width: 200px;
+  height: 25px;
+  background-color: #aaaaaa;
+  border: 2px solid black;
+}
+
+button {
+  font-family: "Montserrat";
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #2a623d;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 11px;
+  color: #e2e2e2;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #2a623d;
+}
+
+button:hover {
+  color: white;
+  background-color: #1a472a;
+  border: 0.2em solid #1a472a;
+  box-shadow: none;
+}

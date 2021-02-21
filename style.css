@@ -56,6 +56,10 @@ button:hover {
   box-shadow: none;
 }
 
+.make_buttons {
+  display: none;
+}
+
 /* List of students (loopview) */
 
 #listview {
@@ -96,7 +100,7 @@ button:hover {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
-  display: none;
+  /* display: none; */
   overflow: scroll;
 }
 
@@ -149,4 +153,9 @@ button:hover {
 .popupImg {
   width: 300px;
   margin: 20px;
+}
+
+.popupCrest {
+  width: 110px;
+  margin-left: 20px;
 }

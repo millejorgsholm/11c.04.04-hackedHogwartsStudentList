@@ -1,3 +1,7 @@
+body {
+  background-color: #443b21;
+}
+
 header {
   display: flex;
   width: 100%;
@@ -5,8 +9,14 @@ header {
 }
 
 h1 {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  color: #d3a625;
+}
+
+p {
   font-family: "Montserrat";
-  color: #1a472a;
+  color: white;
 }
 
 #search {
@@ -20,7 +30,7 @@ h1 {
 button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
-  border: 0.2em solid #2a623d;
+  border: 0.2em solid #eeba30;
   text-decoration: none;
   font-weight: 400;
   font-size: 11px;
@@ -28,12 +38,12 @@ button {
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #2a623d;
+  background-color: #eeba30;
 }
 
 button:hover {
   color: white;
-  background-color: #1a472a;
-  border: 0.2em solid #1a472a;
+  background-color: #d3a625;
+  border: 0.2em solid #d3a625;
   box-shadow: none;
 }

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Hacked Hogwarts Studentlist - assignment</title>
   </head>
@@ -33,13 +38,7 @@
           >
             Expelled
           </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="nonexpelled"
-          >
-            Non-expelled
-          </button>
+
           <button
             class="filterButtons"
             data-action="filter"
@@ -145,6 +144,30 @@
           </button>
         </div>
       </div>
+      <!-- Popups -->
+      <section class="popup popupGryffindor noDisplay">
+        <article>
+          <div class="img_wrapper">
+            <img src="" alt="student" class="popupImg" />
+            <img src="" alt="Crest" class="popupCrest" />
+          </div>
+          <div class="textwrapper">
+            <h2 class="popupName">Harry James Potter</h2>
+            <p class="popupHouse">House:</p>
+            <p class="popupResponsibility">Respontibility:</p>
+            <p class="popupBlood">Blood status:</p>
+            <p class="popupPrefect">Prefect:</p>
+            <p class="popupMember">Member of inquisitorial squad:</p>
+            <p class="popupExpelled">Expelled:</p>
+            <button class="closeButton">Close</button>
+          </div>
+          <div class="make_buttons">
+            <button>Make prefect</button>
+            <button>Make member</button>
+            <button>Expel</button>
+          </div>
+        </article>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>

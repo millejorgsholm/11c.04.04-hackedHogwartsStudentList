@@ -21,6 +21,41 @@ function start() {
 
   loadJSON();
 }
+// TODO: Adding eventListeners to filter and sort buttons
+//Filter
+document
+  .querySelector("[data-filter=fullStudentList]")
+  .addEventListener("click", clickAllBtn);
+document
+  .querySelector("[data-filter=expelled]")
+  .addEventListener("click", clickExpelledBtn);
+document
+  .querySelector("[data-filter=fullBlood]")
+  .addEventListener("click", clickFullBloodBtn);
+
+document
+  .querySelector("[data-filter=halfBlood]")
+  .addEventListener("click", clickHalfBloodBtn);
+
+document
+  .querySelector("[data-filter=gryffindor]")
+  .addEventListener("click", clickGryffindorBtn);
+
+document
+  .querySelector("[data-filter=slytherin]")
+  .addEventListener("click", clickSlytherinBtn);
+
+document
+  .querySelector("[data-filter=hufflepuff]")
+  .addEventListener("click", clickHufflepuffBtn);
+
+document
+  .querySelector("[data-filter=ravenclaw]")
+  .addEventListener("click", clickRavenclawBtn);
+
+document
+  .querySelector("[data-filter=prefects]")
+  .addEventListener("click", clickPrefectsBtn);
 
 //Fetching json data
 function loadJSON() {

@@ -74,6 +74,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   justify-self: center;
+  border-radius: 25px;
 }
 
 .student_article img {
@@ -87,7 +88,7 @@ button:hover {
 
 /* POPUP (singleview) */
 
-.noDisplay {
+.hidden {
   display: none;
 }
 .popup {
@@ -160,13 +161,13 @@ button:hover {
 }
 
 /* POPUP BTNS */
-.popup article .make_buttons {
+.popup article .cta_buttons {
   display: flex;
   flex-direction: column;
   margin-top: 260px;
 }
 
-.popup article .make_buttons button {
+.popup article .cta_buttons button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
   border: 0.2em solid #aaaaaa;
@@ -181,7 +182,7 @@ button:hover {
   margin: 15px;
 }
 
-.popup article .make_buttons button:hover {
+.popup article .cta_buttons button:hover {
   color: white;
   background-color: #5d5d5d;
   border: 0.2em solid #5d5d5d;

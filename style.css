@@ -38,7 +38,7 @@ p {
 button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
-  border: 0.2em solid #eeba30;
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 400;
   font-size: 11px;
@@ -46,13 +46,13 @@ button {
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #eeba30;
+  background-color: #aaaaaa;
 }
 
 button:hover {
   color: white;
-  background-color: #d3a625;
-  border: 0.2em solid #d3a625;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
   box-shadow: none;
 }
 /* List of students (loopview) */
@@ -88,7 +88,7 @@ button:hover {
 /* POPUP (singleview) */
 
 .noDisplay {
-  /* display: none; */
+  display: none;
 }
 .popup {
   position: fixed;
@@ -108,6 +108,26 @@ button:hover {
   background-color: white;
   margin: 40px auto;
   border-radius: 15px;
+}
+
+/* popup slytherin */
+.popupSlytherin article {
+  background-color: #2a623d;
+}
+
+/* popup gryffindor */
+.popupGryffindor article {
+  background-color: #cf1b1b;
+}
+
+/* popup hufflepuff */
+.popupHufflepuff article {
+  background-color: #425aac;
+}
+
+/* popup ravenclaw */
+.popupRavenclaw article {
+  background-color: #ffed86;
 }
 
 /* POPUP IMGS */
@@ -149,7 +169,7 @@ button:hover {
 .popup article .make_buttons button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
-  border: 0.2em solid #eeba30;
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 400;
   font-size: 11px;
@@ -157,14 +177,14 @@ button:hover {
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #eeba30;
+  background-color: #aaaaaa;
   margin: 15px;
 }
 
 .popup article .make_buttons button:hover {
   color: white;
-  background-color: #d3a625;
-  border: 0.2em solid #d3a625;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
   box-shadow: none;
 }
 .popup article .closeButton {

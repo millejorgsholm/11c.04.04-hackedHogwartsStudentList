@@ -18,54 +18,83 @@ const Student = {
 };
 function start() {
   console.log("ready");
+  // TODO: Adding eventListeners to filter and sort buttons
+  //Filter
+  document
+    .querySelector("[data-filter=fullStudentList]")
+    .addEventListener("click", clickAllBtn);
+  document
+    .querySelector("[data-filter=expelled]")
+    .addEventListener("click", clickExpelledBtn);
+  document
+    .querySelector("[data-filter=fullBlood]")
+    .addEventListener("click", clickFullBloodBtn);
+
+  document
+    .querySelector("[data-filter=halfBlood]")
+    .addEventListener("click", clickHalfBloodBtn);
+
+  document
+    .querySelector("[data-filter=gryffindor]")
+    .addEventListener("click", clickGryffindorBtn);
+
+  document
+    .querySelector("[data-filter=slytherin]")
+    .addEventListener("click", clickSlytherinBtn);
+
+  document
+    .querySelector("[data-filter=hufflepuff]")
+    .addEventListener("click", clickHufflepuffBtn);
+
+  document
+    .querySelector("[data-filter=ravenclaw]")
+    .addEventListener("click", clickRavenclawBtn);
+
+  document
+    .querySelector("[data-filter=prefects]")
+    .addEventListener("click", clickPrefectsBtn);
+
+  //Sort
+  document
+    .querySelector("[data-sort=firstName]")
+    .addEventListener("click", clickSortFirstName);
+
+  document
+    .querySelector("[data-sort=lastName]")
+    .addEventListener("click", clickSortLastName);
+
+  document
+    .querySelector("[data-sort=gryffindor]")
+    .addEventListener("click", clickSortGryffindor);
+
+  document
+    .querySelector("[data-sort=slytherin]")
+    .addEventListener("click", clickSortSlytherin);
+
+  document
+    .querySelector("[data-sort=hufflepuff]")
+    .addEventListener("click", clickSortHufflepuff);
+
+  document
+    .querySelector("[data-sort=ravenclaw]")
+    .addEventListener("click", clickSortRavenclaw);
+
+  document
+    .querySelector("[data-sort=prefects]")
+    .addEventListener("click", clickSortPrefects);
 
   loadJSON();
 }
-// TODO: Adding eventListeners to filter and sort buttons
-//Filter
-document
-  .querySelector("[data-filter=fullStudentList]")
-  .addEventListener("click", clickAllBtn);
-document
-  .querySelector("[data-filter=expelled]")
-  .addEventListener("click", clickExpelledBtn);
-document
-  .querySelector("[data-filter=fullBlood]")
-  .addEventListener("click", clickFullBloodBtn);
-
-document
-  .querySelector("[data-filter=halfBlood]")
-  .addEventListener("click", clickHalfBloodBtn);
-
-document
-  .querySelector("[data-filter=gryffindor]")
-  .addEventListener("click", clickGryffindorBtn);
-
-document
-  .querySelector("[data-filter=slytherin]")
-  .addEventListener("click", clickSlytherinBtn);
-
-document
-  .querySelector("[data-filter=hufflepuff]")
-  .addEventListener("click", clickHufflepuffBtn);
-
-document
-  .querySelector("[data-filter=ravenclaw]")
-  .addEventListener("click", clickRavenclawBtn);
-
-document
-  .querySelector("[data-filter=prefects]")
-  .addEventListener("click", clickPrefectsBtn);
 
 //Fetching json data
 function loadJSON() {
+  console.log("JSON data loaded");
   fetch("https://petlatkea.dk/2021/hogwarts/students.json")
     .then(response => response.json())
     .then(jsonData => {
       //When loaded, prepare objects
       prepareObjects(jsonData);
     });
-  console.log("JSON data loaded");
 }
 
 function prepareObjects(jsonData) {

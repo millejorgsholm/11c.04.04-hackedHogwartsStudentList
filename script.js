@@ -2,6 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
+let students;
 let filter = "all";
 
 //Creating empty array
@@ -20,68 +21,68 @@ function start() {
   console.log("ready");
   // TODO: Adding eventListeners to filter and sort buttons
   //Filter
-  document
-    .querySelector("[data-filter=fullStudentList]")
-    .addEventListener("click", clickAllBtn);
-  document
-    .querySelector("[data-filter=expelled]")
-    .addEventListener("click", clickExpelledBtn);
-  document
-    .querySelector("[data-filter=fullBlood]")
-    .addEventListener("click", clickFullBloodBtn);
+  // document
+  //   .querySelector("[data-filter=fullStudentList]")
+  //   .addEventListener("click", clickFullListBtn);
+  // document
+  //   .querySelector("[data-filter=expelled]")
+  //   .addEventListener("click", clickExpelledBtn);
+  // document
+  //   .querySelector("[data-filter=fullBlood]")
+  //   .addEventListener("click", clickFullBloodBtn);
 
-  document
-    .querySelector("[data-filter=halfBlood]")
-    .addEventListener("click", clickHalfBloodBtn);
+  // document
+  //   .querySelector("[data-filter=halfBlood]")
+  //   .addEventListener("click", clickHalfBloodBtn);
 
-  document
-    .querySelector("[data-filter=gryffindor]")
-    .addEventListener("click", clickGryffindorBtn);
+  // document
+  //   .querySelector("[data-filter=gryffindor]")
+  //   .addEventListener("click", clickGryffindorBtn);
 
-  document
-    .querySelector("[data-filter=slytherin]")
-    .addEventListener("click", clickSlytherinBtn);
+  // document
+  //   .querySelector("[data-filter=slytherin]")
+  //   .addEventListener("click", clickSlytherinBtn);
 
-  document
-    .querySelector("[data-filter=hufflepuff]")
-    .addEventListener("click", clickHufflepuffBtn);
+  // document
+  //   .querySelector("[data-filter=hufflepuff]")
+  //   .addEventListener("click", clickHufflepuffBtn);
 
-  document
-    .querySelector("[data-filter=ravenclaw]")
-    .addEventListener("click", clickRavenclawBtn);
+  // document
+  //   .querySelector("[data-filter=ravenclaw]")
+  //   .addEventListener("click", clickRavenclawBtn);
 
-  document
-    .querySelector("[data-filter=prefects]")
-    .addEventListener("click", clickPrefectsBtn);
+  // document
+  //   .querySelector("[data-filter=prefects]")
+  //   .addEventListener("click", clickPrefectsBtn);
 
-  //Sort
-  document
-    .querySelector("[data-sort=firstName]")
-    .addEventListener("click", clickSortFirstName);
+  // //Sort
+  // document
+  //   .querySelector("[data-sort=firstName]")
+  //   .addEventListener("click", clickSortFirstName);
 
-  document
-    .querySelector("[data-sort=lastName]")
-    .addEventListener("click", clickSortLastName);
+  // document
+  //   .querySelector("[data-sort=lastName]")
+  //   .addEventListener("click", clickSortLastName);
 
-  document
-    .querySelector("[data-sort=gryffindor]")
-    .addEventListener("click", clickSortGryffindor);
+  // document
+  //   .querySelector("[data-sort=gryffindor]")
+  //   .addEventListener("click", clickSortGryffindor);
 
-  document
-    .querySelector("[data-sort=slytherin]")
-    .addEventListener("click", clickSortSlytherin);
+  // document
+  //   .querySelector("[data-sort=slytherin]")
+  //   .addEventListener("click", clickSortSlytherin);
 
-  document
-    .querySelector("[data-sort=hufflepuff]")
-    .addEventListener("click", clickSortHufflepuff);
+  // document
+  //   .querySelector("[data-sort=hufflepuff]")
+  //   .addEventListener("click", clickSortHufflepuff);
 
-  document
-    .querySelector("[data-sort=ravenclaw]")
-    .addEventListener("click", clickSortRavenclaw);
+  // document
+  //   .querySelector("[data-sort=ravenclaw]")
+  //   .addEventListener("click", clickSortRavenclaw);
 
-  document
-    .querySelector("[data-sort=prefects]")
-    .addEventListener("click", clickSortPrefects);
+  // document
+  //   .querySelector("[data-sort=prefects]")
+  //   .addEventListener("click", clickSortPrefects);
 
   loadJSON();
 }
@@ -98,6 +99,7 @@ function loadJSON() {
 }
 
 function prepareObjects(jsonData) {
+  console.log("prepareObjects");
   jsonData.forEach(jsonObject => {
     // TODO: Create new object with cleaned data - and store that in the allAnimals array
 
@@ -194,6 +196,7 @@ function prepareObjects(jsonData) {
 }
 
 function displayList() {
+  console.log("displayList");
   //Clear the list
   document.querySelector("#list tbody").innerHTML = "";
 
@@ -202,6 +205,7 @@ function displayList() {
 }
 
 function displayStudent(student) {
+  console.log("displayStudent");
   //Create clone
   const clone = document
     .querySelector("template#studenttemplate")
@@ -223,11 +227,38 @@ function displayStudent(student) {
   document.querySelector("#list tbody").appendChild(clone);
 }
 
+//Cloning template into list
+function visRetter() {
+  const list = document.querySelector("#listview");
+  const menuTemplate = document.querySelector("template");
+  list.innerHTML = "";
+  stundets.feed.entry.forEach(student => {
+    let clone = studentTemplate.cloneNode(true).content;
+    clone.querySelector("[data-field=firstname]").textContent =
+      student.firstName;
+    clone.querySelector("[data-field=middlename]").textContent =
+      student.middleName;
+    clone.querySelector("[data-field=lastname]").textContent = student.lastName;
+    clone.querySelector("[data-field=nickname]").textContent = student.nickName;
+    clone.querySelector("[data-field=gender]").textContent = student.gender;
+    clone.querySelector("[data-field=house]").textContent = student.house;
+    clone.querySelector("[data-field=image] img").src = `images/${
+      student.lastName
+    }_${student.firstName.charAt(0)}.png`;
+    clone
+      .querySelector("article")
+      .addEventListener("click", () => showDetails(student));
+    list.appendChild(clone);
+    console.log(stundent);
+  });
+}
+
 //Popup
 
-const popup = document.querySelector("studenttemplate");
+const popup = document.querySelector("#studentTemplate");
 
-function studentPopup(student) {
+function showDetails(student) {
+  console.log("studentPopup");
   console.log(student);
   popup.querySelector("[data-field=firstname]").textContent = student.firstName;
   popup.querySelector("[data-field=middlename]").textContent =

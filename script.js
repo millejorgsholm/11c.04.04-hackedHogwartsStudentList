@@ -2,8 +2,6 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-let students;
-
 //Creating empty array
 const allStudents = [];
 
@@ -202,23 +200,26 @@ function displayList() {
   //Build a new list
   allStudents.forEach(displayStudent);
 }
-// //Cloning template into list
+
 function displayStudent(student) {
-  const list = document.querySelector("#listview");
-  const studentTemplate = document.querySelector("#studenttemplate");
-  list.innerHTML = "";
-  students.feed.entry.forEach(student => {
-    let clone = studentTemplate.cloneNode(true).content;
-    clone.querySelector(".firstName").textContent = student.firstName;
-    clone.querySelector(".lastName").textContent = student.lastName;
-    clone.querySelector(".house").textContent = student.house;
-    clone.querySelector("img").src = `images/${
-      student.lastName
-    }_${student.firstName.charAt(0)}.png`;
-    clone
-      .querySelector("article")
-      .addEventListener("click", () => showDetails(student));
-    list.appendChild(clone);
-    console.log(student);
-  });
+  console.log("displayStudent");
+  //Create clone
+  const clone = document
+    .querySelector("template#hogwarts_student")
+    .content.cloneNode(true);
+
+  //Set clone data
+  clone.querySelector("[data-field=firstname]").textContent = student.firstName;
+  // clone.querySelector("[data-field=middlename]").textContent =
+  //   student.middleName;
+  clone.querySelector("[data-field=lastname]").textContent = student.lastName;
+  // clone.querySelector("[data-field=nickname]").textContent = student.nickName;
+  // clone.querySelector("[data-field=gender]").textContent = student.gender;
+  clone.querySelector("[data-field=house]").textContent = student.house;
+  clone.querySelector("[data-field=image] img").src = `images/${
+    student.lastName
+  }_${student.firstName.charAt(0)}.png`;
+
+  //Append clone to list
+  document.querySelector("#listview").appendChild(clone);
 }

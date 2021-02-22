@@ -2,6 +2,8 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
+let filter = "all";
+
 //Creating empty array
 const allStudents = [];
 
@@ -155,4 +157,30 @@ function displayStudent(student) {
 
   //Append clone to list
   document.querySelector("#list tbody").appendChild(clone);
+}
+
+//Popup
+
+const popup = document.querySelector("studenttemplate");
+
+function studentPopup(student) {
+  console.log(student);
+  popup.querySelector("[data-field=firstname]").textContent = student.firstName;
+  popup.querySelector("[data-field=middlename]").textContent =
+    student.middleName;
+  popup.querySelector("[data-field=lastname]").textContent = student.lastName;
+  popup.querySelector("[data-field=nickname]").textContent = student.nickName;
+  popup.querySelector("[data-field=gender]").textContent = student.gender;
+  popup.querySelector("[data-field=house]").textContent = student.house;
+  //   popup.querySelector("[data-field=image] img").src = `images/${
+  //     student.lastName
+  //   }_${student.firstName.charAt(0)}.png`;
+
+  popup.style.display = "block";
+}
+
+document.querySelector("#closeButton").addEventListener("click", closepopop);
+
+function closepopop() {
+  popop.style.display = "none";
 }

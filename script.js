@@ -3,7 +3,6 @@
 window.addEventListener("DOMContentLoaded", start);
 
 let students;
-let filter = "all";
 
 //Creating empty array
 const allStudents = [];
@@ -95,7 +94,6 @@ function loadJSON() {
     .then(jsonData => {
       //When loaded, prepare objects
       prepareObjects(jsonData);
-      showStudents();
     });
 }
 
@@ -204,24 +202,12 @@ function displayList() {
   //Build a new list
   allStudents.forEach(displayStudent);
 }
-
+// //Cloning template into list
 function displayStudent(student) {
-  console.log("displayStudent");
-  //Create clone
-  const clone = document
-    .querySelector("template#studenttemplate")
-    .content.cloneNode(true);
-
-  //Append clone to list
-  document.querySelector("#listview").appendChild(clone);
-}
-
-//Cloning template into list
-function showStudents() {
   const list = document.querySelector("#listview");
-  const menuTemplate = document.querySelector("template");
+  const studentTemplate = document.querySelector("#studenttemplate");
   list.innerHTML = "";
-  stundets.feed.entry.forEach(student => {
+  students.feed.entry.forEach(student => {
     let clone = studentTemplate.cloneNode(true).content;
     clone.querySelector(".firstName").textContent = student.firstName;
     clone.querySelector(".lastName").textContent = student.lastName;

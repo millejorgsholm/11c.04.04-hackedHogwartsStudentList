@@ -55,11 +55,6 @@ button:hover {
   border: 0.2em solid #d3a625;
   box-shadow: none;
 }
-
-.make_buttons {
-  display: none;
-}
-
 /* List of students (loopview) */
 
 #listview {
@@ -91,71 +86,89 @@ button:hover {
 }
 
 /* POPUP (singleview) */
-#popop {
+
+.noDisplay {
+  /* display: none; */
+}
+.popup {
   position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
-  bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  /* display: none; */
-  overflow: scroll;
 }
 
-#popop article {
-  /* display: none; */
-  width: 60vw;
-  margin: 4rem auto;
-  background-color: #ffffff;
+.popup article {
+  display: flex;
+  width: 80vw;
+  max-width: 1152px;
+  height: 85vh;
+  background-color: white;
+  margin: 40px auto;
   border-radius: 15px;
 }
-#close {
-  position: fixed;
+
+/* POPUP IMGS */
+.image_wrapper {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.image_wrapper img {
+  width: 230px;
+  height: 230px;
+}
+
+/* POPUP text */
+.popup article .textwrapper {
+  width: 550px;
+}
+.popup article .textwrapper p {
+  margin: 10px 0;
+  color: black;
+}
+.popup article .textwrapper h2 {
+  text-align: left;
+  font-size: 35px;
+  color: black;
+}
+
+/* POPUP BTNS */
+.popup article .make_buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 260px;
+}
+
+.popup article .make_buttons button {
   font-family: "Montserrat";
   padding: 1.35em 2.2em;
-  border: 0.2em solid #ae0001;
+  border: 0.2em solid #eeba30;
   text-decoration: none;
-  font-weight: 300;
-  font-size: 10px;
-  color: black;
+  font-weight: 400;
+  font-size: 11px;
+  color: #e2e2e2;
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #ae0001;
-  top: 5vw;
-  right: 21vw;
+  background-color: #eeba30;
+  margin: 15px;
 }
-#close:hover {
+
+.popup article .make_buttons button:hover {
   color: white;
-  background-color: black;
-  border: 0.2em solid black;
+  background-color: #d3a625;
+  border: 0.2em solid #d3a625;
   box-shadow: none;
 }
-
-#popop h2 {
-  margin-left: 20px;
-  font-family: "Cinzel Decorative", cursive;
-  color: #d3a625;
-}
-
-#popop p {
-  font-family: "Montserrat";
-  margin-left: 20px;
-  color: #d3a625;
-}
-
-#popop_content {
-  display: flex;
-}
-
-.popupImg {
-  width: 300px;
-  margin: 20px;
-}
-
-.popupCrest {
-  width: 110px;
-  margin-left: 20px;
+.popup article .closeButton {
+  position: absolute;
+  right: 12vw;
+  top: 4vw;
 }

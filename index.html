@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Hacked Hogwarts Studentlist - assignment</title>
   </head>
@@ -143,30 +146,35 @@
         </div>
       </div>
       <!-- Popups -->
-      <section id="popop">
+      <section class="popup popupSlytherin noDisplay">
         <article>
-          <button id="close">X</button>
-          <div id="popop_content">
-            <div class="img_wrapper">
-              <img src="images/potter_h.png" alt="student" class="popupImg" />
-            </div>
-            <div class="textwrapper">
-              <h2 class="popupName">Harry James Potter</h2>      
-              <img src="crests/Gryffindor-Crest-Color.svg" alt="Crest" class="popupCrest" />   
-              <p class="popupHouse">House:</p>
-              <p class="popupResponsibility">Respontibility:</p>
-              <p class="popupBlood">Blood status:</p>
-              <p class="popupPrefect">Prefect:</p>
-              <p class="popupMember">Member of inquisitorial squad:</p>
-              <p class="popupExpelled">Expelled:</p>
-            </div>
-            <div class="make_buttons">
-              <button>Make prefect</button>
-              <button>Make member</button>
-              <button>Expel</button>
+          <div class="image_wrapper">
+            <img src="images/potter_h.png" alt="Student" class="popupImg" />
+            <img
+              src="crests/Gryffindor-Crest-Color.svg"
+              alt="Crest"
+              class="popupCrest"
+            />
+          </div>
+          <div class="textwrapper">
+            <h2 class="popupName">Harry James Potter</h2>
+            <p class="popupHouse">House:</p>
+            <p class="popupResponsibility">Respontibility:</p>
+            <p class="popupBlood">Blood:</p>
+            <p class="popupPrefect">Prefect:</p>
+            <p class="popupMember">Member of inquisitorial squad:</p>
+            <p class="popupExpelled">Expelled:</p>
+            <button class="closeButton">X</button>
+          </div>
+          <div class="make_buttons">
+            <button>Make prefect</button>
+            <button>Make member</button>
+            <button>Expel</button>
           </div>
         </article>
       </section>
+
+      <!-- An empty section for the list -->
       <h2>All students</h2>
       <section id="listview">
         <article class="student_article">

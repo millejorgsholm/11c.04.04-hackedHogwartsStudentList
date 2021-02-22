@@ -2,6 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
+const popop = document.querySelector("#popop");
 //Creating empty array
 const allStudents = [];
 
@@ -219,7 +220,22 @@ function displayStudent(student) {
   clone.querySelector("[data-field=image] img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
+  clone
+    .querySelector("article")
+    .addEventListener("click", () => showDetails(student));
 
   //Append clone to list
   document.querySelector("#listview").appendChild(clone);
+}
+
+function showDetails(student) {
+  clone.querySelector("[data-field=firstname]").textContent = student.firstName;
+  popop.style.display = "block";
+}
+
+//Popup closes when clicking on btn
+document.querySelector("#closeButton").addEventListener("click", closePopup);
+
+function closePopup() {
+  popop.style.display = "none";
 }

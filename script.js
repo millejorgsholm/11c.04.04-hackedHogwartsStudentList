@@ -95,6 +95,7 @@ function loadJSON() {
     .then(jsonData => {
       //When loaded, prepare objects
       prepareObjects(jsonData);
+      showStudents();
     });
 }
 
@@ -198,7 +199,7 @@ function prepareObjects(jsonData) {
 function displayList() {
   console.log("displayList");
   //Clear the list
-  document.querySelector("#list tbody").innerHTML = "";
+  document.querySelector("#listview").innerHTML = "";
 
   //Build a new list
   allStudents.forEach(displayStudent);
@@ -211,71 +212,27 @@ function displayStudent(student) {
     .querySelector("template#studenttemplate")
     .content.cloneNode(true);
 
-  //Set clone data
-  clone.querySelector("[data-field=firstname]").textContent = student.firstName;
-  clone.querySelector("[data-field=middlename]").textContent =
-    student.middleName;
-  clone.querySelector("[data-field=lastname]").textContent = student.lastName;
-  clone.querySelector("[data-field=nickname]").textContent = student.nickName;
-  clone.querySelector("[data-field=gender]").textContent = student.gender;
-  clone.querySelector("[data-field=house]").textContent = student.house;
-  clone.querySelector("[data-field=image] img").src = `images/${
-    student.lastName
-  }_${student.firstName.charAt(0)}.png`;
-
   //Append clone to list
-  document.querySelector("#list tbody").appendChild(clone);
+  document.querySelector("#listview").appendChild(clone);
 }
 
 //Cloning template into list
-function visRetter() {
+function showStudents() {
   const list = document.querySelector("#listview");
   const menuTemplate = document.querySelector("template");
   list.innerHTML = "";
   stundets.feed.entry.forEach(student => {
     let clone = studentTemplate.cloneNode(true).content;
-    clone.querySelector("[data-field=firstname]").textContent =
-      student.firstName;
-    clone.querySelector("[data-field=middlename]").textContent =
-      student.middleName;
-    clone.querySelector("[data-field=lastname]").textContent = student.lastName;
-    clone.querySelector("[data-field=nickname]").textContent = student.nickName;
-    clone.querySelector("[data-field=gender]").textContent = student.gender;
-    clone.querySelector("[data-field=house]").textContent = student.house;
-    clone.querySelector("[data-field=image] img").src = `images/${
+    clone.querySelector(".firstName").textContent = student.firstName;
+    clone.querySelector(".lastName").textContent = student.lastName;
+    clone.querySelector(".house").textContent = student.house;
+    clone.querySelector("img").src = `images/${
       student.lastName
     }_${student.firstName.charAt(0)}.png`;
     clone
       .querySelector("article")
       .addEventListener("click", () => showDetails(student));
     list.appendChild(clone);
-    console.log(stundent);
+    console.log(student);
   });
-}
-
-//Popup
-
-const popup = document.querySelector("#studentTemplate");
-
-function showDetails(student) {
-  console.log("studentPopup");
-  console.log(student);
-  popup.querySelector("[data-field=firstname]").textContent = student.firstName;
-  popup.querySelector("[data-field=middlename]").textContent =
-    student.middleName;
-  popup.querySelector("[data-field=lastname]").textContent = student.lastName;
-  popup.querySelector("[data-field=nickname]").textContent = student.nickName;
-  popup.querySelector("[data-field=gender]").textContent = student.gender;
-  popup.querySelector("[data-field=house]").textContent = student.house;
-  //   popup.querySelector("[data-field=image] img").src = `images/${
-  //     student.lastName
-  //   }_${student.firstName.charAt(0)}.png`;
-
-  popup.style.display = "block";
-}
-
-document.querySelector("#closeButton").addEventListener("click", closepopop);
-
-function closepopop() {
-  popop.style.display = "none";
 }

@@ -2,6 +2,8 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
+const popup = document.querySelector(".popup");
+
 let allStudents = []; //Creating empty array
 
 const Student = {
@@ -241,6 +243,9 @@ function displayStudent(student) {
   clone.querySelector("[data-field=image] img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
+  clone
+    .querySelector("article")
+    .addEventListener("click", () => showDetails(student));
 
   //Append clone to list
   document.querySelector("#list").appendChild(clone);
@@ -248,4 +253,32 @@ function displayStudent(student) {
   //TODO: FÅ POP OP TIL AT VIRKE
   //   //When u click on a student the modal will pop up
   //   clone.querySelector("article").addEventListener("click", () => visDetaljer(student));
+}
+
+function showDetails(student) {
+  console.log(student);
+  popup.querySelector(".popupName").textContent = student.firstName;
+  popup.querySelector(".popupHouse").textContent = "House:  " + student.house;
+  popup.querySelector(".popupResponsibility").textContent =
+    "Responsibility:  " + student.responsibility;
+  popup.querySelector(".popupBlood").textContent =
+    "Bloodstatus:  " + student.blood;
+  popup.querySelector(".popupPrefect").textContent =
+    "Prefect:  " + student.prefect;
+  popup.querySelector(".popupMember").textContent =
+    "Member of inquisitorial squad:  " + student.squad;
+  popup.querySelector(".popupExpelled").textContent =
+    "Expelled:  " + student.expelled;
+  popup.querySelector("img").src = `images/${
+    student.lastName
+  }_${student.firstName.charAt(0)}.png`;
+  popup.style.display = "block";
+}
+
+//Closing popup when click on button
+document.querySelector(".closeButton").addEventListener("click", closePopup);
+
+function closePopup() {
+  console.log("close popup");
+  popup.style.display = "none";
 }

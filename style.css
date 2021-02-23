@@ -12,7 +12,7 @@ h1 {
 
 h2 {
   font-family: "Cinzel", serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /*HEADER*************************/
@@ -67,7 +67,7 @@ select {
 /*MAIN***************************/
 main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 /*SECTION COUNT******************/
@@ -93,7 +93,7 @@ h2 {
   padding: 10px 0px 0px 20px;
 }
 
-article {
+.student_article {
   width: 280px;
   height: 350px;
   background-color: #f0c653;
@@ -101,14 +101,86 @@ article {
   margin: 25px;
 }
 
-article img {
+.student_article img {
   width: 150px;
   margin-top: 20px;
 }
 
-article p {
+.student_article p {
   font-family: "Open Sans", sans-serif;
   color: black;
   line-height: 35px;
   text-align: center;
+}
+
+/* POPUP general styling*/
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup article {
+  display: flex;
+  width: 80vw;
+  max-width: 1152px;
+  height: 70vh;
+  background-color: white;
+  margin: 40px auto;
+  border-radius: 15px;
+}
+.image_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin: 0 70px;
+  margin-top: 40px;
+}
+.image_wrapper img {
+  width: 280px;
+  height: 280px;
+}
+
+.popupCrest {
+  width: 30%;
+}
+
+.popup article .textwrapper {
+  width: 550px;
+}
+.popup article .textwrapper p {
+  margin: 10px 0;
+  color: black;
+}
+.popup article .textwrapper h2 {
+  text-align: left;
+  font-size: 35px;
+  color: black;
+}
+
+/* POPUP HOUSES - STYLING */
+
+.popupGryffindor article {
+  background-color: #d33d3d;
+}
+
+.popupSlytherin article {
+  background-color: #4b9b66;
+}
+
+.popupRavenclaw article {
+  background-color: #4960ac;
+}
+
+.popupHufflepuff article {
+  background-color: #f1de6f;
 }

@@ -1,282 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Hacked Hogwarts Studentlist - assignment</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <input type="search" placeholder="Search.." id="search" name="search" />
-      </nav>
-    </header>
-    <h1>Hogwarts Student List</h1>
-    <main>
-      <!-- Filtering -->
-      <div id="filterSortContainer">
-        <div id="filterContainer">
-          <p>Filter:</p>
-          <button
-            class="filterButtons chosen"
-            data-action="filter"
-            data-filter="fullStudentList"
-          >
-            All students
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="expelled"
-          >
-            Expelled
-          </button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <title>Hogwarts student list</title>
+</head>
+<body>
 
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="fullBlood"
-          >
-            Full-Blood
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="halfBlood"
-          >
-            Half-Blood
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="gryffindor"
-          >
-            Gryffindor
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="slytherin"
-          >
-            Slytherin
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="hufflepuff"
-          >
-            Hufflepuff
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="ravenclaw"
-          >
-            Ravenclaw
-          </button>
-          <button
-            class="filterButtons"
-            data-action="filter"
-            data-filter="prefects"
-          >
-            Prefect students
-          </button>
-        </div>
+  <header>
+    <div id="logo"><img src="address.png" alt="logo"></div>
+    <div id="header_title"><h1>Hogwarts Student List</h1></div>
+  </header>
 
-        <!-- Sorting the list -->
-        <p>Sort:</p>
-        <div id="sortContainer">
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="firstName"
-          >
-            First name
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="lastName"
-          >
-            Last name
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="gryffindor"
-          >
-            Gryffindor
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="slytherin"
-          >
-            Slytherin
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="hufflepuff"
-          >
-            Hufflepuff
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="ravenclaw"
-          >
-            Ravenclaw
-          </button>
-          <button
-            class="sortButtons"
-            data-action="sort"
-            data-sort="prefects"
-          >
-            Prefects
-          </button>
-        </div>
-      </div>
-      <!-- POPUPS-->
-      <!-- TODO: Popup WARNING!!-->
-      <!-- Popup Slytherin -->
-      <section class="popup popupSlytherin hidden">
-        <article>
-          <div class="image_wrapper">
-            <img src="images/potter_h.png" alt="Student" class="popupImg" />
-            <img
-              src="crests/Gryffindor-Crest-Color.svg"
-              alt="Crest"
-              class="popupCrest"
-            />
-          </div>
-          <div class="textwrapper">
-            <h2 class="popupName">Harry James Potter</h2>
-            <p class="popupHouse">House:</p>
-            <p class="popupResponsibility">Respontibility:</p>
-            <p class="popupBlood">Blood:</p>
-            <p class="popupPrefect">Prefect:</p>
-            <p class="popupMember">Member of inquisitorial squad:</p>
-            <p class="popupExpelled">Expelled:</p>
-            <button class="closeButton">X</button>
-          </div>
-          <div class="cta_buttons">
-            <button>Make prefect</button>
-            <button>Make member of inquisitorial squad</button>
-            <button>Expel student</button>
-          </div>
-        </article>
-      </section>
-      <!-- Popup Gryffindor -->
-      <section class="popup popupGryffindor hidden">
-        <article>
-          <div class="image_wrapper">
-            <img src="images/potter_h.png" alt="Student" class="popupImg" />
-            <img
-              src="crests/Gryffindor-Crest-Color.svg"
-              alt="Crest"
-              class="popupCrest"
-            />
-          </div>
-          <div class="textwrapper">
-            <h2 class="popupName">Harry James Potter</h2>
-            <p class="popupHouse">House:</p>
-            <p class="popupResponsibility">Respontibility:</p>
-            <p class="popupBlood">Blood:</p>
-            <p class="popupPrefect">Prefect:</p>
-            <p class="popupMember">Member of inquisitorial squad:</p>
-            <p class="popupExpelled">Expelled:</p>
-            <button class="closeButton">X</button>
-          </div>
-          <div class="cta_buttons">
-            <button>Make prefect</button>
-            <button>Make member of inquisitorial squad</button>
-            <button>Expel student</button>
-          </div>
-        </article>
-      </section>
-      <!-- Popup Hufflepuff -->
-      <section class="popup popupHufflepuff hidden">
-        <article>
-          <div class="image_wrapper">
-            <img src="images/potter_h.png" alt="Student" class="popupImg" />
-            <img
-              src="crests/Gryffindor-Crest-Color.svg"
-              alt="Crest"
-              class="popupCrest"
-            />
-          </div>
-          <div class="textwrapper">
-            <h2 class="popupName">Harry James Potter</h2>
-            <p class="popupHouse">House:</p>
-            <p class="popupResponsibility">Respontibility:</p>
-            <p class="popupBlood">Blood:</p>
-            <p class="popupPrefect">Prefect:</p>
-            <p class="popupMember">Member of inquisitorial squad:</p>
-            <p class="popupExpelled">Expelled:</p>
-            <button class="closeButton">X</button>
-          </div>
-          <div class="cta_buttons">
-            <button>Make prefect</button>
-            <button>Make member of inquisitorial squad</button>
-            <button>Expel student</button>
-          </div>
-        </article>
-      </section>
-      <!-- Popup Ravenclaw -->
-      <section class="popup popupRavenclaw hidden">
-        <article>
-          <div class="image_wrapper">
-            <img src="images/potter_h.png" alt="Student" class="popupImg" />
-            <img
-              src="crests/Gryffindor-Crest-Color.svg"
-              alt="Crest"
-              class="popupCrest"
-            />
-          </div>
-          <div class="textwrapper">
-            <h2 class="popupName">Harry James Potter</h2>
-            <p class="popupHouse">House:</p>
-            <p class="popupResponsibility">Respontibility:</p>
-            <p class="popupBlood">Blood:</p>
-            <p class="popupPrefect">Prefect:</p>
-            <p class="popupMember">Member of inquisitorial squad:</p>
-            <p class="popupExpelled">Expelled:</p>
-            <button class="closeButton">X</button>
-          </div>
-          <div class="cta_buttons"></div>
-            <button>Make prefect</button>
-            <button>Make member of inquisitorial squad</button>
-            <button>Expel student</button>
-          </div>
-        </article>
-      </section>
+  <!-- This is the navigation with the filter and sort drop downs -->
+  <nav>
+    <select id="house">
+      <option class="filter" data-action="filter" data-filter="house">House</option>
+      <option class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</option>
+      <option class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</option>
+      <option class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</option>
+      <option class="filter" data-action="filter" data-filter="slytherin">Slytherin</option>  
+    </select>
 
-      <!-- An empty section for the list -->
-      <h2>All students</h2>
-      <section id="listview">
-      </section>
-  
-      <template id="hogwarts_student">
-       <article class="student_article ">
+    <select id="enrolment">
+      <option value="enrolment">Enrolment</option>
+      <option value="enrolled">Enrolled</option>
+      <option value="expelled">Expelled</option>
+    </select>
+
+    <select id="other">
+      <option value="Other">Other</option>
+      <option value="prefect">Prefect</option>
+      <option value="squas">Inquisitorial squad</option>
+    </select>
+
+    <select id="sorting">
+      <option data-action="sort" data-sort-direction="asc" data-sort="sort">Sort by</option>
+      <option data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</option>
+      <option data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</option>
+      <option data-action="sort" data-sort-direction="asc" data-sort="gender">Gender</option>
+      <option data-action="sort" data-sort-direction="asc" data-sort="blood">Blood status</option>
+    </select>
+
+    <button>Search</button>
+
+  </nav>
+
+<!-- Here is the main with the count and studentlist section -->
+  <main>
+    <section id="count">
+      <h2>Student list details</h2>
+      <p class="weight600">Gryffendor:</p><p class=""></p>
+      <p class="weight600">Hufflepuff:</p><p class=""></p>
+      <p class="weight600">Ravenclaw:</p><p class=""></p>
+      <p class="weight600">Slytherin:</p><p class=""></p>
+      <p class="weight600">Current:</p><p class=""></p>
+      <p class="weight600">Expelled:</p><p class=""></p>
+      <p class="weight600">Currently displayed:</p><p class=""></p>
+      
+    </section>
+    <section id="list">
+    </section>
+
+    <template id="hogwarts_student">
+     <article>
+        <p data-field="firstname">firstname</p>
+        <p data-field="lastname">lastname<p>
+        <p data-field="middlename">middlename</p>
+        <p data-field="nickname">nickname</p>
+        <p data-field="gender">gender</p>
+        <p data-field="house">house</p>
         <p data-field="image"><img sr=""></td>
-          <p data-field="firstname">firstname</p>
-          <p data-field="lastname">lastname<p>
-          <p data-field="gender">gender</p>
-          <p data-field="house">house</p>
-          </article> 
-      </template>
-      </section>
-  
-    </main>
+        </article> 
+    </template>
+    </section>
+
+  </main>
+
+
+ <!-- <section id="popop">
+    <div id="popop_artikel">
+        <div id="luk">X</div>
+        <p data-field="firstname">firstname</p>
+        <p data-field="lastname">lastname<p>
+     
+        <div class="popop_kolonne">
+           
+        </div> -->
+ 
+
+
+<!-- Here is the modal html
+  <section id="modal">
+    <article>
+        <div id="close">x</div>
+        <div class="column img">
+            <img src="moldaviskfiskesuppe-sm.jpg" alt="" class="modal_img">
+        </div>
+        <div class="column">
+            <div class="text-modal">
+              <template id="hogwarts_student"></template>
+              <h2 data-field="fullname"></h2>  
+                  <p data-field="firstname">firstname<p>
+                  <p data-field="middlename">middlename<p>
+                  <p data-field="house">house<p>
+                  <p data-field="nickname">nickname<p>
+                  <p data-field="gender">gender<p>
+                  <p data-field="blood">blood<p>
+              </template>
+                 
+              
+              <p class="popupPrefect">Prefect:</p>
+              <p class="popupMember">Member of inquisitorial squad:</p>
+              <p class="popupExpelled">Expelled:</p>
+        
+                <div class="modal_logo"><img src="address.png"></div>
+            </div>  -->
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

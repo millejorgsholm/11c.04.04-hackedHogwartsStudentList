@@ -1,195 +1,104 @@
-body {
-  background-color: #443b21;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }
 
 h1 {
-  font-family: "Cinzel Decorative", cursive;
-  font-weight: 300;
-  color: #d3a625;
+  font-size: 40px;
 }
 
 h2 {
-  font-family: "Cinzel Decorative", cursive;
-  font-weight: 300;
-  color: #d3a625;
+  font-size: 25px;
 }
 
-p {
-  font-family: "Montserrat";
-  color: white;
+/*HEADER*************************/
+
+header {
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  justify-content: center;
+  border-bottom: black 1px solid;
 }
 
-#search {
-  margin: 10px 10px;
-  width: 200px;
-  height: 25px;
-  background-color: #aaaaaa;
-  border: 2px solid black;
+#logo {
+  display: inline-block;
+  float: left;
 }
 
-/* BUTTONS */
-
-button {
-  font-family: "Montserrat";
-  padding: 1.35em 2.2em;
-  border: 0.2em solid #aaaaaa;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 11px;
-  color: #e2e2e2;
-  transition: all 0.2s;
-  box-shadow: 1px 2px black;
-  border-radius: 5px;
-  background-color: #aaaaaa;
+#header_title {
+  display: inline-block;
+  text-transform: uppercase;
 }
 
-button:hover {
-  color: white;
-  background-color: #5d5d5d;
-  border: 0.2em solid #5d5d5d;
-  box-shadow: none;
+/*NAV****************************/
+nav {
+  border-bottom: black 1px solid;
+  display: flex;
+  justify-content: space-around;
 }
-/* List of students (loopview) */
 
-#listview {
+select {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  width: 33%;
+  font-size: 25px;
+  height: 55px;
+  line-height: 15px;
+  color: #0a0a0a;
+  padding: 2px 0px 2px 0px;
+  text-align: center;
+  -webkit-appearance: none;
+  border: 0px solid #0a0a0a;
+  background-color: rgba(36, 30, 30, 0.06);
+  border-right: 1px solid black;
+}
+
+/*MAIN***************************/
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+/*SECTION COUNT******************/
+#count {
+  padding: 10px 0px 0px 20px;
+}
+
+#count p,
+h2 {
+  padding-bottom: 10px;
+}
+
+.weight600 {
+  font-weight: 600;
+}
+
+/*SECTION LISt*******************/
+
+#list {
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  width: 90%;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+  border-left: 1px solid black;
+  padding: 10px 0px 0px 20px;
 }
 
-.student_article {
+article {
   width: 280px;
-  height: 500px;
-  background-color: #c0c0c0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-  border-radius: 25px;
+  height: 250px;
+  background-color: #f5d9d9;
 }
 
-.student_article img {
+article img {
+  width: 200px;
   width: 150px;
 }
 
-.student_article p {
+article p {
   color: black;
-  line-height: 15px;
-}
-
-/* POPUP (singleview) */
-
-.hidden {
-  display: none;
-}
-.popup {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.popup article {
-  display: flex;
-  width: 80vw;
-  max-width: 1152px;
-  height: 85vh;
-  background-color: white;
-  margin: 40px auto;
-  border-radius: 15px;
-}
-
-/* popup slytherin */
-.popupSlytherin article {
-  background-color: #2a623d;
-}
-
-/* popup gryffindor */
-.popupGryffindor article {
-  background-color: #cf1b1b;
-}
-
-/* popup hufflepuff */
-.popupHufflepuff article {
-  background-color: #425aac;
-}
-
-/* popup ravenclaw */
-.popupRavenclaw article {
-  background-color: #ffed86;
-}
-
-/* POPUP IMGS */
-.image_wrapper {
-  display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  margin-top: 60px;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-.image_wrapper img {
-  width: 230px;
-  height: 230px;
-}
-
-/* POPUP text */
-.popup article .textwrapper {
-  width: 550px;
-}
-.popup article .textwrapper p {
-  margin: 10px 0;
-  color: black;
-}
-.popup article .textwrapper h2 {
-  text-align: left;
-  font-size: 35px;
-  color: black;
-}
-
-/* POPUP BTNS */
-.popup article .cta_buttons {
-  display: flex;
-  flex-direction: column;
-  margin-top: 260px;
-}
-
-.popup article .cta_buttons button {
-  font-family: "Montserrat";
-  padding: 1.35em 2.2em;
-  border: 0.2em solid #aaaaaa;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 11px;
-  color: #e2e2e2;
-  transition: all 0.2s;
-  box-shadow: 1px 2px black;
-  border-radius: 5px;
-  background-color: #aaaaaa;
-  margin: 15px;
-}
-
-.popup article .cta_buttons button:hover {
-  color: white;
-  background-color: #5d5d5d;
-  border: 0.2em solid #5d5d5d;
-  box-shadow: none;
-}
-.popup article .closeButton {
-  position: absolute;
-  right: 12vw;
-  top: 4vw;
+  line-height: 20px;
 }

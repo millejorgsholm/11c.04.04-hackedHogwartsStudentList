@@ -2,102 +2,47 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-const popop = document.querySelector("#popop");
-//Creating empty array
-const allStudents = [];
+let allStudents = []; //Creating empty array
 
-//Creating the prototype (template)
 const Student = {
+  //Creating the prototype template
   firstname: "",
   lastname: "",
-  middlename: "",
-  nickname: "",
+  middlename: "null",
+  nickname: "null",
   gender: "",
   house: "",
+  imageSrc: "null",
 };
+
 function start() {
   console.log("ready");
-  // TODO: Adding eventListeners to filter and sort buttons
-  //Filter
-  // document
-  //   .querySelector("[data-filter=fullStudentList]")
-  //   .addEventListener("click", clickFullListBtn);
-  // document
-  //   .querySelector("[data-filter=expelled]")
-  //   .addEventListener("click", clickExpelledBtn);
-  // document
-  //   .querySelector("[data-filter=fullBlood]")
-  //   .addEventListener("click", clickFullBloodBtn);
-
-  // document
-  //   .querySelector("[data-filter=halfBlood]")
-  //   .addEventListener("click", clickHalfBloodBtn);
-
-  // document
-  //   .querySelector("[data-filter=gryffindor]")
-  //   .addEventListener("click", clickGryffindorBtn);
-
-  // document
-  //   .querySelector("[data-filter=slytherin]")
-  //   .addEventListener("click", clickSlytherinBtn);
-
-  // document
-  //   .querySelector("[data-filter=hufflepuff]")
-  //   .addEventListener("click", clickHufflepuffBtn);
-
-  // document
-  //   .querySelector("[data-filter=ravenclaw]")
-  //   .addEventListener("click", clickRavenclawBtn);
-
-  // document
-  //   .querySelector("[data-filter=prefects]")
-  //   .addEventListener("click", clickPrefectsBtn);
-
-  // //Sort
-  // document
-  //   .querySelector("[data-sort=firstName]")
-  //   .addEventListener("click", clickSortFirstName);
-
-  // document
-  //   .querySelector("[data-sort=lastName]")
-  //   .addEventListener("click", clickSortLastName);
-
-  // document
-  //   .querySelector("[data-sort=gryffindor]")
-  //   .addEventListener("click", clickSortGryffindor);
-
-  // document
-  //   .querySelector("[data-sort=slytherin]")
-  //   .addEventListener("click", clickSortSlytherin);
-
-  // document
-  //   .querySelector("[data-sort=hufflepuff]")
-  //   .addEventListener("click", clickSortHufflepuff);
-
-  // document
-  //   .querySelector("[data-sort=ravenclaw]")
-  //   .addEventListener("click", clickSortRavenclaw);
-
-  // document
-  //   .querySelector("[data-sort=prefects]")
-  //   .addEventListener("click", clickSortPrefects);
-
+  registerButtons();
   loadJSON();
 }
 
-//Fetching json data
+function registerButtons() {
+  document
+    .querySelectorAll("[data-action='filter']")
+    .forEach(button => button.addEventListener("click", selectFilter));
+
+  document
+    .querySelectorAll("[data-action='sort']")
+    .forEach(button => button.addEventListener("click", selectSort));
+}
+
 function loadJSON() {
-  console.log("JSON data loaded");
+  //Fetching json data
   fetch("https://petlatkea.dk/2021/hogwarts/students.json")
     .then(response => response.json())
     .then(jsonData => {
       //When loaded, prepare objects
       prepareObjects(jsonData);
     });
+  console.log("JSON data loaded");
 }
 
 function prepareObjects(jsonData) {
-  console.log("prepareObjects");
   jsonData.forEach(jsonObject => {
     // TODO: Create new object with cleaned data - and store that in the allAnimals array
 
@@ -190,20 +135,92 @@ function prepareObjects(jsonData) {
     allStudents.push(singleStudent);
   });
   //Calling the function displayList
-  displayList();
+  displayList(allStudents);
 }
 
-function displayList() {
-  console.log("displayList");
+function selectFilter(event) {
+  const filter = event.target.dataset.filter;
+  console.log(`User selected ${filter}`);
+  filterList(filter);
+}
+
+function filterList(filterBy) {
+  let filteredList = allStudents;
+  if (filterBy === "gryffindor") {
+    //create a filter of only cats
+    filteredList = allStudents.filter(isGryf);
+  } else if (filterBy === "hufflepuff") {
+    filteredList = allStudents.filter(isHuff);
+  } else if (filterBy === "ravenclaw") {
+    filteredList = allStudents.filter(isRave);
+  } else if (filterBy === "slytherin") {
+    filteredList = allStudents.filter(isSlyt);
+  }
+  console.table(filteredList);
+  displayList(filteredList);
+}
+
+function isGryf(house) {
+  return house.house === "Gryffindor";
+}
+
+function isHuff(house) {
+  return house.house === "Hufflepuff";
+}
+
+function isRave(house) {
+  return house.house === "Ravenclaw";
+}
+
+function isSlyt(house) {
+  return house.house === "Slytherin";
+}
+
+function selectSort(event) {
+  const sortBy = event.target.dataset.sort;
+  const sortDir = event.target.dataset.sortDirection;
+
+  // toggle the direction!
+  if (sortDir === "asc") {
+    event.target.dataset.sortDirection = "desc";
+  } else {
+    event.target.dataset.sortDirection = "asc";
+  }
+  console.log(`User selected ${sortBy} - ${sortDir}`);
+  sortList(sortBy, sortDir);
+}
+
+function sortList(sortBy, sortDir) {
+  let sortedList = allStudents;
+  let direction = 1; // 1 is normal direction.
+  if (sortDir === "desc") {
+    direction = -1;
+  } else {
+    direction = 1;
+  }
+
+  sortedList = sortedList.sort(sortByProperty);
+
+  function sortByProperty(studentA, studentB) {
+    console.log(`sortBy is ${sortBy}`);
+    if (studentA[sortBy] < studentB[sortBy]) {
+      return -1 * direction;
+    } else {
+      return 1 * direction;
+    }
+  }
+  displayList(sortedList);
+}
+
+function displayList(studentList) {
   //Clear the list
-  document.querySelector("#listview").innerHTML = "";
+  document.querySelector("#list").innerHTML = "";
 
   //Build a new list
-  allStudents.forEach(displayStudent);
+  studentList.forEach(displayStudent);
 }
 
 function displayStudent(student) {
-  console.log("displayStudent");
   //Create clone
   const clone = document
     .querySelector("template#hogwarts_student")
@@ -211,31 +228,20 @@ function displayStudent(student) {
 
   //Set clone data
   clone.querySelector("[data-field=firstname]").textContent = student.firstName;
-  // clone.querySelector("[data-field=middlename]").textContent =
-  //   student.middleName;
+  clone.querySelector("[data-field=middlename]").textContent =
+    student.middleName;
   clone.querySelector("[data-field=lastname]").textContent = student.lastName;
-  // clone.querySelector("[data-field=nickname]").textContent = student.nickName;
+  clone.querySelector("[data-field=nickname]").textContent = student.nickName;
   clone.querySelector("[data-field=gender]").textContent = student.gender;
   clone.querySelector("[data-field=house]").textContent = student.house;
   clone.querySelector("[data-field=image] img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
-  clone
-    .querySelector("article")
-    .addEventListener("click", () => showDetails(student));
 
   //Append clone to list
-  document.querySelector("#listview").appendChild(clone);
-}
+  document.querySelector("#list").appendChild(clone);
 
-function showDetails(student) {
-  clone.querySelector("[data-field=firstname]").textContent = student.firstName;
-  popop.style.display = "block";
-}
-
-//Popup closes when clicking on btn
-document.querySelector("#closeButton").addEventListener("click", closePopup);
-
-function closePopup() {
-  popop.style.display = "none";
+  //TODO: FÅ POP OP TIL AT VIRKE
+  //   //When u click on a student the modal will pop up
+  //   clone.querySelector("article").addEventListener("click", () => visDetaljer(student));
 }

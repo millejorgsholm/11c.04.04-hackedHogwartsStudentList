@@ -249,12 +249,9 @@ function displayStudent(student) {
 
   //Append clone to list
   document.querySelector("#list").appendChild(clone);
-
-  //TODO: FÅ POP OP TIL AT VIRKE
-  //   //When u click on a student the modal will pop up
-  //   clone.querySelector("article").addEventListener("click", () => visDetaljer(student));
 }
 
+//Showing Popup when clicking on a student
 function showDetails(student) {
   console.log(student);
   popup.querySelector(".popupName").textContent = student.firstName;

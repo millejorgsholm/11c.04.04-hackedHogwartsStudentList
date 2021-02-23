@@ -227,13 +227,17 @@ function displayStudent(student) {
     .content.cloneNode(true);
 
   //Set clone data
-  clone.querySelector("[data-field=firstname]").textContent = student.firstName;
+  clone.querySelector("[data-field=firstname]").textContent =
+    "Firstname: " + student.firstName;
   clone.querySelector("[data-field=middlename]").textContent =
     student.middleName;
-  clone.querySelector("[data-field=lastname]").textContent = student.lastName;
+  clone.querySelector("[data-field=lastname]").textContent =
+    "Lastname:" + student.lastName;
   clone.querySelector("[data-field=nickname]").textContent = student.nickName;
-  clone.querySelector("[data-field=gender]").textContent = student.gender;
-  clone.querySelector("[data-field=house]").textContent = student.house;
+  clone.querySelector("[data-field=gender]").textContent =
+    "Gender: " + student.gender;
+  clone.querySelector("[data-field=house]").textContent =
+    "House:  " + student.house;
   clone.querySelector("[data-field=image] img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;

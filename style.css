@@ -89,16 +89,18 @@ h2 {
 
 article {
   width: 280px;
-  height: 250px;
-  background-color: #f5d9d9;
+  height: 350px;
+  background-color: #f0c653;
+  border-radius: 15px;
 }
 
 article img {
-  width: 200px;
   width: 150px;
+  margin-top: 20px;
 }
 
 article p {
   color: black;
-  line-height: 20px;
+  line-height: 35px;
+  text-align: center;
 }

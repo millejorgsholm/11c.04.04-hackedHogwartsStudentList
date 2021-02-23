@@ -23,10 +23,10 @@ header {
   border-bottom: black 1px solid;
 }
 
-#logo {
+/* #logo {
   display: inline-block;
   float: left;
-}
+} */
 
 #header_title {
   display: inline-block;

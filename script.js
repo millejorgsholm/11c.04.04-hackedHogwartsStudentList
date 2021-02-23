@@ -228,11 +228,11 @@ function displayStudent(student) {
 
   //Set clone data
   clone.querySelector("[data-field=firstname]").textContent =
-    "Firstname: " + student.firstName;
+    "Firstname:  " + student.firstName;
   clone.querySelector("[data-field=middlename]").textContent =
     student.middleName;
   clone.querySelector("[data-field=lastname]").textContent =
-    "Lastname:" + student.lastName;
+    "Lastname:  " + student.lastName;
   clone.querySelector("[data-field=nickname]").textContent = student.nickName;
   clone.querySelector("[data-field=gender]").textContent =
     "Gender: " + student.gender;

@@ -7,6 +7,7 @@
 h1 {
   font-family: "Cinzel", serif;
   font-size: 40px;
+  text-align: center;
 }
 
 h2 {
@@ -23,6 +24,9 @@ header {
   border-bottom: black 1px solid;
 }
 
+#logo img {
+  width: 10%;
+}
 /* #logo {
   display: inline-block;
   float: left;

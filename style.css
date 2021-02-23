@@ -56,6 +56,10 @@ select {
   border-right: 1px solid black;
 }
 
+#search {
+  font-size: 15px;
+}
+
 /*MAIN***************************/
 main {
   display: grid;

@@ -68,6 +68,7 @@ select {
 main {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  background-color: #9d7456;
 }
 
 /*SECTION COUNT******************/

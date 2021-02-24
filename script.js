@@ -292,14 +292,6 @@ function showDetails(student) {
   //   popup.querySelector(".expelBtn").textContent = "Expel";
   // }
 
-  if (student.expel === true) {
-    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
-    popup.querySelector(".expelBtn").textContent = "Unexpel student";
-  } else {
-    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
-    popup.querySelector(".expelBtn").textContent = "Expel student";
-  }
-
   //Housecrests and article color change so it matches the house that the student belongs to
 
   if (student.house === "Gryffindor") {
@@ -356,6 +348,14 @@ function expelStudent(student) {
   } else {
     console.log("Expelled");
     student.expel = true;
+  }
+
+  if (student.expel === true) {
+    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
+    popup.querySelector(".expelBtn").textContent = "Unexpel student";
+  } else {
+    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
+    popup.querySelector(".expelBtn").textContent = "Expel student";
   }
 }
 //Make student prefect

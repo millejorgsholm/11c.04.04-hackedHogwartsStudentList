@@ -273,22 +273,26 @@ function showDetails(student) {
   //Housecrests change so it matches the house that the student belongs to
 
   if (student.house === "Gryffindor") {
+    console.log("This student belongs to Gryffindor");
     popup.querySelector(
       ".popupCrest"
     ).src = `crests/Gryffindor-Crest-Color.svg`;
   }
 
   if (student.house === "Slytherin") {
+    console.log("This student belongs to Slytherin");
     popup.querySelector(".popupCrest").src = `crests/Slytherin-Crest-Color.svg`;
   }
 
   if (student.house === "Hufflepuff") {
+    console.log("This student belongs to Hufflepuff");
     popup.querySelector(
       ".popupCrest"
     ).src = `crests/Hufflepuff-Crest-Color.svg`;
   }
 
   if (student.house === "Ravenclaw") {
+    console.log("This student belongs to Ravenclaw");
     popup.querySelector(".popupCrest").src = `crests/Ravenclaw-Crest-Color.svg`;
   }
 

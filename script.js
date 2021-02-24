@@ -294,10 +294,10 @@ function showDetails(student) {
 
   if (student.expel === true) {
     popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
-    popup.querySelector(".expelBtn").textContent = "Expel student";
+    popup.querySelector(".expelBtn").textContent = "Unexpel student";
   } else {
     popup.querySelector(".popupExpelled").textContent = "Status: Not expelled";
-    popup.querySelector(".expelBtn").textContent = "Unexpel student";
+    popup.querySelector(".expelBtn").textContent = "Expel student";
   }
 
   //Housecrests and article color change so it matches the house that the student belongs to

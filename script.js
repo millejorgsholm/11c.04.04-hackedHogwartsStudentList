@@ -292,7 +292,7 @@ function showDetails(student) {
   //   popup.querySelector(".expelBtn").textContent = "Expel";
   // }
 
-  if (student.expeled === true) {
+  if (student.expel === true) {
     popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
     popup.querySelector(".expelBtn").textContent = "Expel student";
   } else {

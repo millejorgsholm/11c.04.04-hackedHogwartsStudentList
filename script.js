@@ -280,7 +280,7 @@ function showDetails(student) {
   // popup.querySelector(".popupMember").textContent =
   //   "Member of inquisitorial squad:  " + student.squad;
   popup.querySelector(".popupExpelled").textContent =
-    "Expelled:  " + student.expel;
+    "Status:  " + student.expel;
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
@@ -296,7 +296,7 @@ function showDetails(student) {
     popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
     popup.querySelector(".expelBtn").textContent = "Unexpel student";
   } else {
-    popup.querySelector(".popupExpelled").textContent = "Status: Not expelled";
+    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
     popup.querySelector(".expelBtn").textContent = "Expel student";
   }
 
@@ -351,7 +351,7 @@ function closePopup() {
 function expelStudent(student) {
   console.log(student);
   if (student.expel === true) {
-    console.log("Unexpelled");
+    console.log("Enrolled");
     student.expel = false;
   } else {
     console.log("Expelled");

@@ -269,6 +269,29 @@ function showDetails(student) {
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
+
+  //Housecrests change so it matches the house that the student belongs to
+
+  if (student.house === "Gryffindor") {
+    popup.querySelector(
+      ".popupCrest"
+    ).src = `crests/Gryffindor-Crest-Color.svg`;
+  }
+
+  if (student.house === "Slytherin") {
+    popup.querySelector(".popupCrest").src = `crests/Slytherin-Crest-Color.svg`;
+  }
+
+  if (student.house === "Hufflepuff") {
+    popup.querySelector(
+      ".popupCrest"
+    ).src = `crests/Hufflepuff-Crest-Color.svg`;
+  }
+
+  if (student.house === "Ravenclaw") {
+    popup.querySelector(".popupCrest").src = `crests/Ravenclaw-Crest-Color.svg`;
+  }
+
   popup.style.display = "block";
 }
 

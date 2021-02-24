@@ -270,18 +270,24 @@ function showDetails(student) {
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
-  //Housecrests change so it matches the house that the student belongs to
+  //Housecrests and article color change so it matches the house that the student belongs to
 
   if (student.house === "Gryffindor") {
     console.log("This student belongs to Gryffindor");
+    //Housecrests change so it matches the house that the student belongs to
     popup.querySelector(
       ".popupCrest"
     ).src = `crests/Gryffindor-Crest-Color.svg`;
+
+    //Article background color matches the house that the student belongs to
+    popup.querySelector("article").style.backgroundColor = "#d33d3d";
   }
 
   if (student.house === "Slytherin") {
     console.log("This student belongs to Slytherin");
     popup.querySelector(".popupCrest").src = `crests/Slytherin-Crest-Color.svg`;
+
+    popup.querySelector("article").style.backgroundColor = "#4b9b66";
   }
 
   if (student.house === "Hufflepuff") {
@@ -289,11 +295,15 @@ function showDetails(student) {
     popup.querySelector(
       ".popupCrest"
     ).src = `crests/Hufflepuff-Crest-Color.svg`;
+
+    popup.querySelector("article").style.backgroundColor = "#f1de6f";
   }
 
   if (student.house === "Ravenclaw") {
     console.log("This student belongs to Ravenclaw");
     popup.querySelector(".popupCrest").src = `crests/Ravenclaw-Crest-Color.svg`;
+
+    popup.querySelector("article").style.backgroundColor = "#4960ac";
   }
 
   popup.style.display = "block";

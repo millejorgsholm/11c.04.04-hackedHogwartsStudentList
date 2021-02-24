@@ -130,9 +130,9 @@ h2 {
 
 .popup article {
   display: flex;
-  width: 80vw;
+  width: 69vw;
   max-width: 1152px;
-  height: 70vh;
+  height: 80vh;
   background-color: white;
   margin: 40px auto;
   border-radius: 15px;
@@ -190,8 +190,9 @@ h2 {
 /* Closing popup button */
 .closeButton {
   font-family: "Open Sans", sans-serif;
-  padding: 1.35em 2.2em;
-  border: 0.2em solid #AAAAAA
+  padding: 1.35em 1.2em;
+  width: 10%;
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -199,21 +200,23 @@ h2 {
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #AAAAAA
+  background-color: #aaaaaa;
+  margin-left: 500px;
+  margin-top: 20px;
 }
 
 .closeButton:hover {
   color: white;
-  background-color: #5D5D5D;
-  border: 0.2em solid #5D5D5D;
-  box-shadow: none;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
+  box-shadow: 1px 2px black;
 }
 /* 
 MAKE PREFECT BTN */
 .prefectBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #AAAAAA
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -221,14 +224,15 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #AAAAAA
+  background-color: #aaaaaa;
+  margin-top: 400px;
 }
 
 .prefectBtn:hover {
   color: white;
-  background-color: #5D5D5D;
-  border: 0.2em solid #5D5D5D;
-  box-shadow: none;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
+  box-shadow: 1px 2px black;
 }
 
 /* MAKE MEMBER OF INQUISTIONAL SQUAD BTN */
@@ -236,7 +240,7 @@ MAKE PREFECT BTN */
 .memberBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #AAAAAA
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -244,21 +248,21 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #AAAAAA
+  background-color: #aaaaaa;
 }
 
 .memberBtn:hover {
   color: white;
-  background-color: #5D5D5D;
-  border: 0.2em solid #5D5D5D;
-  box-shadow: none;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
+  box-shadow: 1px 2px black;
 }
 
 /* EXPEL BTN */
 .expelBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #AAAAAA
+  border: 0.2em solid #aaaaaa;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -266,14 +270,12 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #AAAAAA
+  background-color: #aaaaaa;
 }
 
 .expelBtn:hover {
   color: white;
-  background-color: #5D5D5D;
-  border: 0.2em solid #5D5D5D;
-  box-shadow: none;
+  background-color: #5d5d5d;
+  border: 0.2em solid #5d5d5d;
+  box-shadow: 1px 2px black;
 }
-
-

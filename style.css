@@ -192,7 +192,7 @@ h2 {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 1.2em;
   width: 10%;
-  border: 0.2em solid #aaaaaa;
+  border: 0.2em solid white;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -200,7 +200,7 @@ h2 {
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #aaaaaa;
+  background-color: white;
   margin-left: 500px;
   margin-top: 20px;
 }
@@ -216,7 +216,7 @@ MAKE PREFECT BTN */
 .prefectBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #aaaaaa;
+  border: 0.2em solid white;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -224,7 +224,7 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #aaaaaa;
+  background-color: white;
   margin-top: 20px;
 }
 
@@ -240,7 +240,7 @@ MAKE PREFECT BTN */
 .memberBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #aaaaaa;
+  border: 0.2em solid white;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -248,7 +248,7 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #aaaaaa;
+  background-color: white;
 }
 
 .memberBtn:hover {
@@ -262,7 +262,7 @@ MAKE PREFECT BTN */
 .expelBtn {
   font-family: "Open Sans", sans-serif;
   padding: 1.35em 2.2em;
-  border: 0.2em solid #aaaaaa;
+  border: 0.2em solid white;
   text-decoration: none;
   font-weight: 300;
   font-size: 11px;
@@ -270,7 +270,7 @@ MAKE PREFECT BTN */
   transition: all 0.2s;
   box-shadow: 1px 2px black;
   border-radius: 5px;
-  background-color: #aaaaaa;
+  background-color: white;
 }
 
 .expelBtn:hover {

@@ -285,6 +285,7 @@ function showDetails(student) {
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
+  //Expelling student
   if (student.expel) {
     popup.querySelector(".expelBtn").textContent = "Unexpel";
   } else {

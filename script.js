@@ -285,13 +285,12 @@ function showDetails(student) {
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
-  //Expelling student
-  // if (student.expel) {
-  //   popup.querySelector(".expelBtn").textContent = "Unexpel";
-  // } else {
-  //   popup.querySelector(".expelBtn").textContent = "Expel";
-  // }
-
+  //Then students status is set (whether they are enrolled or expelled)
+  if (student.expel === true) {
+    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
+  } else {
+    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
+  }
   //Housecrests and article color change so it matches the house that the student belongs to
 
   if (student.house === "Gryffindor") {
@@ -350,13 +349,13 @@ function expelStudent(student) {
     student.expel = true;
   }
 
-  //When expelling/unexpelling the student, button and their status changes
+  //Button and status changes when click on btn
   if (student.expel === true) {
-    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
     popup.querySelector(".expelBtn").textContent = "Unexpel student";
+    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
   } else {
-    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
     popup.querySelector(".expelBtn").textContent = "Expel student";
+    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   }
 }
 //Make student prefect

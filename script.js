@@ -254,6 +254,7 @@ function displayStudent(student) {
 //Showing Popup when clicking on a student
 function showDetails(student) {
   console.log(student);
+  console.log("open popup");
   popup.querySelector(".popupName").textContent = student.firstName;
   popup.querySelector(".popupHouse").textContent = "House:  " + student.house;
   popup.querySelector(".popupResponsibility").textContent =

@@ -184,3 +184,96 @@ h2 {
 .popupHufflepuff article {
   background-color: #f1de6f;
 }
+
+/* BUTTONS */
+
+/* Closing popup button */
+.closeButton {
+  font-family: "Open Sans", sans-serif;
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #AAAAAA
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 11px;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #AAAAAA
+}
+
+.closeButton:hover {
+  color: white;
+  background-color: #5D5D5D;
+  border: 0.2em solid #5D5D5D;
+  box-shadow: none;
+}
+/* 
+MAKE PREFECT BTN */
+.prefectBtn {
+  font-family: "Open Sans", sans-serif;
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #AAAAAA
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 11px;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #AAAAAA
+}
+
+.prefectBtn:hover {
+  color: white;
+  background-color: #5D5D5D;
+  border: 0.2em solid #5D5D5D;
+  box-shadow: none;
+}
+
+/* MAKE MEMBER OF INQUISTIONAL SQUAD BTN */
+
+.memberBtn {
+  font-family: "Open Sans", sans-serif;
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #AAAAAA
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 11px;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #AAAAAA
+}
+
+.memberBtn:hover {
+  color: white;
+  background-color: #5D5D5D;
+  border: 0.2em solid #5D5D5D;
+  box-shadow: none;
+}
+
+/* EXPEL BTN */
+.expelBtn {
+  font-family: "Open Sans", sans-serif;
+  padding: 1.35em 2.2em;
+  border: 0.2em solid #AAAAAA
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 11px;
+  color: black;
+  transition: all 0.2s;
+  box-shadow: 1px 2px black;
+  border-radius: 5px;
+  background-color: #AAAAAA
+}
+
+.expelBtn:hover {
+  color: white;
+  background-color: #5D5D5D;
+  border: 0.2em solid #5D5D5D;
+  box-shadow: none;
+}
+
+

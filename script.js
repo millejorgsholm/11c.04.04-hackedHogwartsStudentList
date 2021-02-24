@@ -279,7 +279,7 @@ function showDetails(student) {
       ".popupCrest"
     ).src = `crests/Gryffindor-Crest-Color.svg`;
 
-    //Article background color matches the house that the student belongs to
+    //Popup background color matches the house that the student belongs to
     popup.querySelector("article").style.backgroundColor = "#d33d3d";
   }
 

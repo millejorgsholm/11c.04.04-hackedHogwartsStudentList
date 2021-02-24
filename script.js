@@ -279,17 +279,25 @@ function showDetails(student) {
   //   "Prefect:  " + student.prefect;
   // popup.querySelector(".popupMember").textContent =
   //   "Member of inquisitorial squad:  " + student.squad;
-  // popup.querySelector(".popupExpelled").textContent =
-  //   "Expelled:  " + student.expelled;
+  popup.querySelector(".popupExpelled").textContent =
+    "Expelled:  " + student.expel;
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
   //Expelling student
-  if (student.expel) {
-    popup.querySelector(".expelBtn").textContent = "Unexpel";
+  // if (student.expel) {
+  //   popup.querySelector(".expelBtn").textContent = "Unexpel";
+  // } else {
+  //   popup.querySelector(".expelBtn").textContent = "Expel";
+  // }
+
+  if (student.expeled === true) {
+    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
+    popup.querySelector(".expelBtn").textContent = "Expel student";
   } else {
-    popup.querySelector(".expelBtn").textContent = "Expel";
+    popup.querySelector(".popupExpelled").textContent = "Status: Not expelled";
+    popup.querySelector(".expelBtn").textContent = "Unexpel student";
   }
 
   //Housecrests and article color change so it matches the house that the student belongs to

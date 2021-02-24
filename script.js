@@ -15,6 +15,10 @@ const Student = {
   gender: "",
   house: "",
   imageSrc: "null",
+  prefect: false,
+  bloodstatus: false,
+  member: false,
+  expel: false,
 };
 
 function start() {
@@ -31,6 +35,13 @@ function registerButtons() {
   document
     .querySelectorAll("[data-action='sort']")
     .forEach(button => button.addEventListener("click", selectSort));
+
+  //Expel student
+
+  //Make student prefect
+  // document
+  //   .querySelector(".prefectBtn")
+  //   .addEventListener("click", prefectStudent);
 }
 
 function loadJSON() {
@@ -255,21 +266,30 @@ function displayStudent(student) {
 function showDetails(student) {
   console.log(student);
   console.log("open popup");
+  document.querySelector(".expelBtn").onClick = () => {
+    expelStudent(student);
+  };
   popup.querySelector(".popupName").textContent = student.firstName;
   popup.querySelector(".popupHouse").textContent = "House:  " + student.house;
-  popup.querySelector(".popupResponsibility").textContent =
-    "Responsibility:  " + student.responsibility;
-  popup.querySelector(".popupBlood").textContent =
-    "Bloodstatus:  " + student.blood;
-  popup.querySelector(".popupPrefect").textContent =
-    "Prefect:  " + student.prefect;
-  popup.querySelector(".popupMember").textContent =
-    "Member of inquisitorial squad:  " + student.squad;
-  popup.querySelector(".popupExpelled").textContent =
-    "Expelled:  " + student.expelled;
+  // popup.querySelector(".popupResponsibility").textContent =
+  //   "Responsibility:  " + student.responsibility;
+  // popup.querySelector(".popupBlood").textContent =
+  //   "Bloodstatus:  " + student.blood;
+  // popup.querySelector(".popupPrefect").textContent =
+  //   "Prefect:  " + student.prefect;
+  // popup.querySelector(".popupMember").textContent =
+  //   "Member of inquisitorial squad:  " + student.squad;
+  // popup.querySelector(".popupExpelled").textContent =
+  //   "Expelled:  " + student.expelled;
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
+
+  if (student.expelled) {
+    popup.querySelector(".expelBtn").textContent = "Unexpel";
+  } else {
+    popup.querySelector(".expelBtn").textContent = "Expel";
+  }
 
   //Housecrests and article color change so it matches the house that the student belongs to
 
@@ -317,3 +337,16 @@ function closePopup() {
   console.log("close popup");
   popup.style.display = "none";
 }
+
+//Expel student
+function expelStudent(student) {
+  console.log(student);
+  if (student.expelled === true) {
+    console.log("Unexpelled");
+    student.expelled = false;
+  } else {
+    console.log("Expelled");
+    student.expelled = true;
+  }
+}
+//Make student prefect

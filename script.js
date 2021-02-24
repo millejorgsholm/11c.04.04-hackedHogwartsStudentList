@@ -266,7 +266,7 @@ function displayStudent(student) {
 function showDetails(student) {
   console.log(student);
   console.log("open popup");
-  document.querySelector(".expelBtn").onClick = () => {
+  document.querySelector(".expelBtn").onclick = () => {
     expelStudent(student);
   };
   popup.querySelector(".popupName").textContent = student.firstName;
@@ -285,7 +285,7 @@ function showDetails(student) {
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
-  if (student.expelled) {
+  if (student.expel) {
     popup.querySelector(".expelBtn").textContent = "Unexpel";
   } else {
     popup.querySelector(".expelBtn").textContent = "Expel";
@@ -341,12 +341,12 @@ function closePopup() {
 //Expel student
 function expelStudent(student) {
   console.log(student);
-  if (student.expelled === true) {
+  if (student.expel === true) {
     console.log("Unexpelled");
-    student.expelled = false;
+    student.expel = false;
   } else {
     console.log("Expelled");
-    student.expelled = true;
+    student.expel = true;
   }
 }
 //Make student prefect

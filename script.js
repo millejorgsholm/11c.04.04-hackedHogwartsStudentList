@@ -312,7 +312,7 @@ function showDetails(student) {
     popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   }
 
-  //When click on btn it makes student prefe
+  //When click on btn it makes student prefect
   popup.querySelector(".prefectBtn").dataset.prefect = student.prefect;
 
   popup.querySelector(".prefectBtn").addEventListener("click", clickPrefect);

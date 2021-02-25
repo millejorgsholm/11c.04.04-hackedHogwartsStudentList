@@ -295,8 +295,8 @@ function showDetails(student) {
   //   "Responsibility:  " + student.responsibility;
   // popup.querySelector(".popupBlood").textContent =
   //   "Bloodstatus:  " + student.blood;
-  // popup.querySelector(".popupPrefect").textContent =
-  //   "Prefect:  " + student.prefect;
+  popup.querySelector(".popupPrefect").textContent =
+    "Prefect:  " + student.prefect;
   // popup.querySelector(".popupMember").textContent =
   //   "Member of inquisitorial squad:  " + student.squad;
   popup.querySelector(".popupExpelled").textContent =
@@ -395,6 +395,7 @@ function expelStudent(student) {
     popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   }
 }
+
 //Make student prefect
 function tryToMakeAPrefect(selectedStudent) {
   console.log("we are in the tryToMake function");
@@ -522,6 +523,17 @@ function tryToMakeAPrefect(selectedStudent) {
   function makePrefect(student) {
     console.log("make prefect");
     student.prefect = true;
+
+    //trying to make buttons and their popup prefect-status change
+    if (student.prefect === true) {
+      popup.querySelector(".prefectBtn").textContent =
+        "Make student non-prefect";
+      popup.querySelector(".popupPrefect").textContent = "Student is prefect";
+    } else {
+      popup.querySelector(".prefectBtn").textContent = "Make student prefect";
+      popup.querySelector(".popupPrefect").textContent =
+        "Student is not prefect";
+    }
   }
 }
 

@@ -524,3 +524,10 @@ function tryToMakeAPrefect(selectedStudent) {
     student.prefect = true;
   }
 }
+
+//Display the count
+function displayNumbers() {
+  console.log("Update counters");
+  document.querySelector(".total_students").textContent = "Display students";
+  document.querySelector(".total_students").textContent += allStudents.length;
+}

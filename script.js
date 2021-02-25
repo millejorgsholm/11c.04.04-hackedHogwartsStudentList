@@ -5,6 +5,8 @@ window.addEventListener("DOMContentLoaded", start);
 const popup = document.querySelector(".popup");
 
 let allStudents = []; //Creating empty array
+let allStudentsFiltered = [];
+let allStudentsExpelled = [];
 
 const Student = {
   //Creating the prototype template
@@ -210,6 +212,13 @@ function sortList(sortBy, sortDir) {
     direction = -1;
   } else {
     direction = 1;
+  }
+
+  function buildList() {
+    const currentList = filterList(allStudents);
+    const sortedList = sortList(currentList);
+
+    displayList(sortedList);
   }
 
   sortedList = sortedList.sort(sortByProperty);

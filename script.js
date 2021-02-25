@@ -311,6 +311,23 @@ function showDetails(student) {
   } else {
     popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   }
+
+  //When click on btn it makes student prefect
+  popup.querySelector(".prefectBtn").dataset.prefect = student.prefect;
+
+  popup.querySelector(".prefectBtn").addEventListener("click", clickPrefect);
+  function clickPrefect() {
+    if (student.prefect === true) {
+      console.log("student prefect false");
+      student.prefect = false;
+    } else {
+      console.log("try to make");
+      tryToMakeAPrefect(student);
+    }
+
+    showDetails(student);
+  }
+
   //Housecrests and article color change so it matches the house that the student belongs to
 
   if (student.house === "Gryffindor") {

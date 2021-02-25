@@ -406,6 +406,7 @@ function tryToMakeAPrefect(selectedStudent) {
   console.log(prefects);
 
   const numbersOfPrefects = prefects.length;
+  console.log("numbersOfPrefects");
   const other = prefects
     .filter(
       prefect =>

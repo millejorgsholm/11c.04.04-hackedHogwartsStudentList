@@ -289,18 +289,23 @@ function showDetails(student) {
   document.querySelector(".expelBtn").onclick = () => {
     expelStudent(student);
   };
-  popup.querySelector(".popupName").textContent = student.firstName;
-  popup.querySelector(".popupHouse").textContent = "House:  " + student.house;
-  // popup.querySelector(".popupResponsibility").textContent =
-  //   "Responsibility:  " + student.responsibility;
-  // popup.querySelector(".popupBlood").textContent =
-  //   "Bloodstatus:  " + student.blood;
-  popup.querySelector(".popupPrefect").textContent =
-    "Prefect:  " + student.prefect;
-  // popup.querySelector(".popupMember").textContent =
-  //   "Member of inquisitorial squad:  " + student.squad;
-  popup.querySelector(".popupExpelled").textContent =
-    "Status:  " + student.expel;
+  popup.querySelector(
+    ".popupName"
+  ).textContent = ` ${student.firstName} ${student.lastName}`;
+  popup.querySelector(".popupHouse").textContent = `House: ${student.house}`;
+  // popup.querySelector(
+  //   ".popupResponsibility"
+  // ).textContent = `Respontibility: ${student.responsibility}`;
+  // popup.querySelector(".popupBlood").textContent = `Blood: ${student.blood}`;
+  popup.querySelector(
+    ".popupPrefect"
+  ).textContent = `Prefect: ${student.prefect}`;
+  // popup.querySelector(
+  //   ".popupMember"
+  // ).textContent = `Member of inquisitorial squad: ${student.member}`;
+  popup.querySelector(
+    ".popupExpelled"
+  ).textContent = `Expelled: ${student.expel}`;
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;

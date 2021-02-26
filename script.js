@@ -315,6 +315,18 @@ function showDetails(student) {
   }_${student.firstName.charAt(0)}.png`;
 
   //When click on btn it makes student prefect
+
+  if (student.prefect === true) {
+    popup.querySelector(".prefectBtn").textContent =
+      "Remove student as prefect";
+    popup.querySelector(".popupPrefect").textContent =
+      "Status: Prefect student";
+  } else {
+    popup.querySelector(".prefectBtn").textContent = "Make student prefect";
+    popup.querySelector(".popupPrefect").textContent =
+      "Status: Non-prefect student";
+  }
+
   popup.querySelector(".prefectBtn").dataset.prefect = student.prefect;
 
   popup.querySelector(".prefectBtn").addEventListener("click", clickPrefect);

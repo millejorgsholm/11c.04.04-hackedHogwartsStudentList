@@ -164,7 +164,6 @@ function prepareObjects(jsonData) {
     allStudents.push(singleStudent);
   });
   //Calling the function displayList
-  // displayList(allStudents);
   buildList();
 }
 
@@ -336,7 +335,7 @@ function showDetails(student) {
   popup.querySelector(".popupHouse").textContent = `House: ${student.house}`;
   popup.querySelector(
     ".popupBlood"
-  ).textContent = `blood: ${student.bloodstatus}`;
+  ).textContent = `Blood: ${student.bloodstatus}`;
   popup.querySelector(
     ".popupPrefect"
   ).textContent = `Prefect: ${student.prefect}`;

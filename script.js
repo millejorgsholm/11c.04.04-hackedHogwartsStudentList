@@ -51,6 +51,9 @@ function registerButtons() {
   document
     .querySelectorAll("[data-action='sort']")
     .forEach(button => button.addEventListener("click", selectSort));
+
+  //Eventlistener på søgefelt
+  document.querySelector("#search").addEventListener("input", searchStudent);
 }
 
 function loadJSON() {
@@ -269,6 +272,7 @@ function displayList(studentList) {
 
   //Build a new list
   studentList.forEach(displayStudent);
+  displayCounter();
 }
 
 function displayStudent(student) {
@@ -578,4 +582,62 @@ function displayNumbers() {
   console.log("Update counters");
   document.querySelector(".total_students").textContent = "Display students";
   document.querySelector(".total_students").textContent += allStudents.length;
+}
+
+//Søgefelt
+function searchStudent() {
+  //Finding value in the searchinput
+  let searchstring = document.querySelector("#search").value.toLowerCase();
+
+  //Search through allStudents and update displayList
+  let searchResult = allStudents.filter(filterSearch);
+
+  //Closure searchStudent
+  function filterSearch(student) {
+    //Searching for firstname and lastname
+    if (
+      student.firstName.toString().toLowerCase().includes(searchstring) ||
+      student.lastName.toString().toLowerCase().includes(searchstring)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //If searchfield is empty it will show the students again
+  if (searchstring == " ") {
+    displayList(allStudents);
+  }
+  //Update surrently showing students to search result
+  displayList(searchResult);
+}
+
+function displayCounter() {
+  document.querySelector(".total_gryffindor").textContent = filtersHouse(
+    "gryffindor"
+  );
+  document.querySelector(".total_hufflepuff").textContent = filtersHouse(
+    "hufflepuff"
+  );
+  document.querySelector(".total_ravenclaw").textContent = filtersHouse(
+    "ravenclaw"
+  );
+  document.querySelector(".total_slytherin").textContent = filtersHouse(
+    "slytherin"
+  );
+
+  function filtersHouse(theHouse) {
+    house = theHouse;
+    let studentsInHouse = allStudents.filter(isInHouse);
+    return studentsInHouse.length;
+  }
+
+  function isInHouse(student) {
+    if (student.house.toLowerCase() === house) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

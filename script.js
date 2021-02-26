@@ -41,6 +41,14 @@ function registerButtons() {
     .forEach(button => button.addEventListener("click", selectFilter));
 
   document
+    .querySelector("[data-filter='expelled']")
+    .addEventListener("click", showExpelledStudent);
+
+  document
+    .querySelector("[data-filter='enrolled']")
+    .addEventListener("click", showEnrolledStudent);
+
+  document
     .querySelectorAll("[data-action='sort']")
     .forEach(button => button.addEventListener("click", selectSort));
 }
@@ -164,8 +172,14 @@ function setFilter(filter) {
   buildList();
 }
 
-function filterExpelled() {
+function showExpelledStudent() {
   console.log("Showing expelled students");
+  displayList(expelledStudents);
+}
+
+function showEnrolledStudent() {
+  console.log("Showing enrolled students");
+  displayList(allStudents);
 }
 
 function filterList(filteredList) {

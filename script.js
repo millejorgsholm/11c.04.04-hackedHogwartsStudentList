@@ -317,16 +317,13 @@ function showDetails(student) {
     ".popupName"
   ).textContent = ` ${student.firstName} ${student.lastName}`;
   popup.querySelector(".popupHouse").textContent = `House: ${student.house}`;
-  // popup.querySelector(
-  //   ".popupResponsibility"
-  // ).textContent = `Respontibility: ${student.responsibility}`;
   // popup.querySelector(".popupBlood").textContent = `Blood: ${student.blood}`;
   popup.querySelector(
     ".popupPrefect"
   ).textContent = `Prefect: ${student.prefect}`;
-  // popup.querySelector(
-  //   ".popupMember"
-  // ).textContent = `Member of inquisitorial squad: ${student.member}`;
+  popup.querySelector(
+    ".popupMember"
+  ).textContent = `Member of inquisitorial squad: ${student.member}`;
   popup.querySelector(
     ".popupExpelled"
   ).textContent = `Expelled: ${student.expel}`;

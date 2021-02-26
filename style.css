@@ -320,3 +320,9 @@ button.closebutton {
 .hide2 {
   display: none;
 }
+
+.hacked {
+  background-color: black;
+  color: #00841f;
+  text-shadow: 2px 2px 8px #00841f;
+}

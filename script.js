@@ -8,6 +8,7 @@ let allStudents = []; //Creating empty array
 let allStudentsFiltered = [];
 let expelledStudents = [];
 let allBloodLines = [];
+let isHacked = false;
 
 const Student = {
   //Creating the prototype template
@@ -655,4 +656,32 @@ function displayCounter() {
       return false;
     }
   }
+}
+
+//Hacking the system
+
+function hackTheSystem() {
+  isHacked = true;
+  console.log("The system is hacked");
+  changeLooks();
+  addMeToStudentList();
+  //Mess with squad and bloodtypes are missing
+}
+
+function changeLooks() {
+  document.querySelector("h1").classList.add("hacked");
+  document.querySelector("body").classList.add("hacked");
+}
+
+function addMeToStudentList() {
+  const me = Object.create(Student);
+
+  me.firstName = "Mille";
+  me.lastName = "Bierrings";
+  me.middleName = "Jørgsholm";
+  me.house = "Østerbro";
+  me.blood = "Mud blood";
+  me.photo = "images/me_hogwarts.png";
+  allStudents.push(me);
+  buildList();
 }

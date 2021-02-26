@@ -68,7 +68,7 @@ select {
 main {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  background-color: #9d7456;
+  background-color: #566b9d;
 }
 
 /*SECTION COUNT******************/
@@ -97,7 +97,7 @@ h2 {
 .student_article {
   width: 280px;
   height: 380px;
-  background-color: #f0c653;
+  background-color: #b9b9b9;
   border-radius: 15px;
   margin: 25px;
 }

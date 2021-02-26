@@ -321,8 +321,9 @@ button.closebutton {
   display: none;
 }
 
+/* After system has been hacked */
 .hacked {
-  background-color: black;
-  color: #00841f;
-  text-shadow: 2px 2px 8px #00841f;
+  background-color: rgb(60, 60, 60);
+  color: #840000;
+  text-shadow: 2px 2px 8px #e9a40f;
 }

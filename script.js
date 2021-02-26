@@ -7,6 +7,7 @@ const popup = document.querySelector(".popup");
 let allStudents = []; //Creating empty array
 let allStudentsFiltered = [];
 let expelledStudents = [];
+let allBloodLines = [];
 
 const Student = {
   //Creating the prototype template
@@ -18,7 +19,7 @@ const Student = {
   house: "",
   imageSrc: "null",
   prefect: false,
-  bloodstatus: false,
+  bloodstatus: "",
   member: false,
   expel: false,
 };
@@ -32,7 +33,12 @@ const settings = {
 function start() {
   console.log("ready");
   registerButtons();
-  loadJSON();
+
+  loadJSON("https://petlatkea.dk/2021/hogwarts/students.json", prepareObjects);
+  loadJSON(
+    "https://petlatkea.dk/2021/hogwarts/families.json",
+    defineBloodStatus
+  );
 }
 
 function registerButtons() {
@@ -56,15 +62,13 @@ function registerButtons() {
   document.querySelector("#search").addEventListener("input", searchStudent);
 }
 
-function loadJSON() {
+async function loadJSON(url, event) {
   //Fetching json data
-  fetch("https://petlatkea.dk/2021/hogwarts/students.json")
-    .then(response => response.json())
-    .then(jsonData => {
-      //When loaded, prepare objects
-      prepareObjects(jsonData);
-    });
-  console.log("JSON data loaded");
+  const respons = await fetch(url);
+  const jsonData = await respons.json();
+  event(jsonData);
+
+  console.log("Data loaded");
 }
 
 function prepareObjects(jsonData) {
@@ -160,8 +164,21 @@ function prepareObjects(jsonData) {
     allStudents.push(singleStudent);
   });
   //Calling the function displayList
-  displayList(allStudents);
+  // displayList(allStudents);
   buildList();
+}
+
+function defineBloodStatus(jsonData) {
+  console.log("defining bloodstatus for students");
+  allStudents.forEach(student => {
+    if (jsonData.half.includes(student.lastName)) {
+      student.bloodstatus = "Half-Blood";
+    } else if (jsonData.pure.includes(student.lastName)) {
+      student.bloodstatus = "Pure-Blood";
+    } else {
+      student.bloodstatus = "Muggleborn";
+    }
+  });
 }
 
 function selectFilter(event) {
@@ -317,7 +334,9 @@ function showDetails(student) {
     ".popupName"
   ).textContent = ` ${student.firstName} ${student.lastName}`;
   popup.querySelector(".popupHouse").textContent = `House: ${student.house}`;
-  // popup.querySelector(".popupBlood").textContent = `Blood: ${student.blood}`;
+  popup.querySelector(
+    ".popupBlood"
+  ).textContent = `blood: ${student.bloodstatus}`;
   popup.querySelector(
     ".popupPrefect"
   ).textContent = `Prefect: ${student.prefect}`;

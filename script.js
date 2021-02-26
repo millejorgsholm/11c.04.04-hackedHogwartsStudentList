@@ -164,6 +164,10 @@ function setFilter(filter) {
   buildList();
 }
 
+function filterExpelled() {
+  console.log("Showing expelled students");
+}
+
 function filterList(filteredList) {
   if (settings.filterBy === "gryffindor") {
     //create a filter of only cats
@@ -310,13 +314,6 @@ function showDetails(student) {
     student.lastName
   }_${student.firstName.charAt(0)}.png`;
 
-  //Then students status is set (whether they are enrolled or expelled)
-  if (student.expel === true) {
-    popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
-  } else {
-    popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
-  }
-
   //When click on btn it makes student prefect
   popup.querySelector(".prefectBtn").dataset.prefect = student.prefect;
 
@@ -401,7 +398,7 @@ function expelStudent(student) {
 
   //Button and status changes when click on btn
   if (student.expel === true) {
-    popup.querySelector(".expelBtn").textContent = "Unexpel student";
+    popup.querySelector(".expelBtn").style.display = "Expel student";
     popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
   } else {
     popup.querySelector(".expelBtn").textContent = "Expel student";

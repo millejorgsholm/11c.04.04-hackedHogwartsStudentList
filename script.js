@@ -6,7 +6,7 @@ const popup = document.querySelector(".popup");
 
 let allStudents = []; //Creating empty array
 let allStudentsFiltered = [];
-let allStudentsExpelled = [];
+let expelledStudents = [];
 
 const Student = {
   //Creating the prototype template
@@ -389,6 +389,14 @@ function expelStudent(student) {
   } else {
     console.log("Expelled");
     student.expel = true;
+
+    //remove expelled student from allStudents
+    allStudents.splice(allStudents.indexOf(student), 1);
+
+    //add the student to list of expelled student (new array)
+    expelledStudents.push(student);
+
+    buildList();
   }
 
   //Button and status changes when click on btn

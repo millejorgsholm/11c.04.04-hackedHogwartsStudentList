@@ -425,7 +425,7 @@ function expelStudent(student) {
 
   //Button and status changes when click on btn
   if (student.expel === true) {
-    popup.querySelector(".expelBtn").style.display = "none";
+    popup.querySelector(".expelBtn").textContent = "Enroll student";
     popup.querySelector(".popupExpelled").textContent = "Status: Expelled";
   } else {
     popup.querySelector(".expelBtn").textContent = "Expel student";

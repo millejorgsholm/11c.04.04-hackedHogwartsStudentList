@@ -264,6 +264,8 @@ function buildList() {
   const sortedList = sortList(currentList);
 
   displayList(sortedList);
+  let sortedLength = sortedList.length;
+  document.querySelector(".displayed_students").textContent = sortedLength;
 }
 
 function displayList(studentList) {

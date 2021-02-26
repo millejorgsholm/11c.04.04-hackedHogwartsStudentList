@@ -324,9 +324,7 @@ function showDetails(student) {
   popup.querySelector(
     ".popupMember"
   ).textContent = `Member of inquisitorial squad: ${student.member}`;
-  popup.querySelector(
-    ".popupExpelled"
-  ).textContent = `Expelled: ${student.expel}`;
+  popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   popup.querySelector("img").src = `images/${
     student.lastName
   }_${student.firstName.charAt(0)}.png`;

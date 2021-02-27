@@ -505,8 +505,6 @@ function tryToMakeAPrefect(selectedStudent) {
       .querySelector("#remove_other #removeother")
       .addEventListener("click", clickRemoveOther);
 
-    //document.querySelector("#remove_other [data-field=otherwinner]").textContent = other.firstName;
-
     //if ignore - do nothing
     function closeDialog() {
       document.querySelector("#remove_other").classList.add("hide2");
@@ -528,7 +526,7 @@ function tryToMakeAPrefect(selectedStudent) {
     }
   }
 
-  function removeAorB(winnerA, winnerB) {
+  function removeAorB(prefectA, prefectB) {
     // ask the user to ignore or remove a or b
 
     document.querySelector("#remove_aorb").classList.remove("hide2");
@@ -573,7 +571,7 @@ function tryToMakeAPrefect(selectedStudent) {
 
     function clickRemoveB() {
       //else - if removeB
-      removePrefect(winnerB);
+      removePrefect(prefectB);
       makePrefect(selectedStudent);
       buildList();
       //displayModal(student);

@@ -9,7 +9,7 @@ let allStudentsFiltered = [];
 let expelledStudents = [];
 let allBloodLines = [];
 let isHacked = false;
-let prefectStudent = [];
+let prefectStudents = [];
 
 const Student = {
   //Creating the prototype template
@@ -204,7 +204,7 @@ function showExpelledStudent() {
 
 function showPrefectStudent() {
   console.log("Showing prefect students");
-  displayList(prefectStudent);
+  displayList(prefectStudents);
 }
 
 function showEnrolledStudent() {
@@ -601,7 +601,7 @@ function tryToMakeAPrefect(selectedStudent) {
         "Student is not prefect";
     }
 
-    prefectStudent.push(student);
+    prefectStudents.push(student);
   }
 }
 

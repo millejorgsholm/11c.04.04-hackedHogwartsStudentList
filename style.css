@@ -327,3 +327,27 @@ button.closebutton {
   color: #840000;
   text-shadow: 2px 2px 8px #e9a40f;
 }
+
+.popup_warning article {
+  height: 70vh;
+  width: 70vw;
+  background-color: cornsilk;
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.popup_warning article h1 {
+  margin: 50px 0;
+  text-align: center;
+}
+.popup_warning article p {
+  text-align: center;
+}
+.popup_warning article button {
+  margin: 100px 50%;
+  transform: translateX(-50%);
+}

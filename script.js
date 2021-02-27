@@ -439,6 +439,8 @@ function expelStudent(student) {
   if (student.expel === true) {
     console.log("Enrolled");
     student.expel = false;
+  } else if (student.firstName === "Mille") {
+    showExpelWarning();
   } else {
     console.log("Expelled");
     student.expel = true;
@@ -460,6 +462,23 @@ function expelStudent(student) {
     popup.querySelector(".expelBtn").textContent = "Expel student";
     popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
   }
+}
+
+function showExpelWarning() {
+  console.log("You cannot expel me!");
+  document.querySelector("#warning article").style.display = "block";
+  document.querySelector("#warning article p").textContent =
+    "You can not expel me!";
+  document
+    .querySelector(".understood_button")
+    .addEventListener("click", closeWarning);
+}
+
+function closeWarning() {
+  document.querySelector("#warning article").style.display = "none";
+  document
+    .querySelector(".understood_button")
+    .removeEventListener("click", closeWarning);
 }
 
 //Make student prefect

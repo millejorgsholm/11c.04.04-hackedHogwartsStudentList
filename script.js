@@ -689,6 +689,7 @@ function addMeToStudentList() {
   me.firstName = "Mille";
   me.lastName = "Bierrings";
   me.middleName = "Jørgsholm";
+  me.gender = "Girl";
   me.house = "Østerbro";
   me.blood = "Mud blood";
   me.photo = "images/me_hogwarts.png";

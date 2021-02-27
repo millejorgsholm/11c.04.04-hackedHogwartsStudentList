@@ -9,6 +9,7 @@ let allStudentsFiltered = [];
 let expelledStudents = [];
 let allBloodLines = [];
 let isHacked = false;
+let prefectStudent = [];
 
 const Student = {
   //Creating the prototype template
@@ -58,6 +59,10 @@ function registerButtons() {
   document
     .querySelectorAll("[data-action='sort']")
     .forEach(button => button.addEventListener("click", selectSort));
+
+  document
+    .querySelector("[data-sort='prefect']")
+    .addEventListener("click", showPrefectStudent);
 
   //Eventlistener på søgefelt
   document.querySelector("#search").addEventListener("input", searchStudent);
@@ -195,6 +200,11 @@ function setFilter(filter) {
 function showExpelledStudent() {
   console.log("Showing expelled students");
   displayList(expelledStudents);
+}
+
+function showPrefectStudent() {
+  console.log("Showing prefect students");
+  displayList(prefectStudent);
 }
 
 function showEnrolledStudent() {
@@ -590,6 +600,8 @@ function tryToMakeAPrefect(selectedStudent) {
       popup.querySelector(".popupPrefect").textContent =
         "Student is not prefect";
     }
+
+    prefectStudent.push(student);
   }
 }
 

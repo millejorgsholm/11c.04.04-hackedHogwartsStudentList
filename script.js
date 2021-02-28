@@ -166,6 +166,14 @@ function prepareObjects(jsonData) {
     singleStudent.gender = singleStudent.genderCapitalized;
     singleStudent.house = singleStudent.houseCapitalized;
 
+    //images
+    singleStudent.image = (
+      singleStudent.lastName +
+      "_" +
+      singleStudent.firstName.substring(0, 1) +
+      ".png"
+    ).toLowerCase();
+
     //Adding all the objects into the array
     allStudents.push(singleStudent);
   });
@@ -322,9 +330,8 @@ function displayStudent(student) {
     "Gender: " + student.gender;
   clone.querySelector("[data-field=house]").textContent =
     "House:  " + student.house;
-  clone.querySelector("[data-field=image] img").src = `images/${
-    student.lastName
-  }_${student.firstName.charAt(0)}.png`;
+  clone.querySelector("[data-field=image]").src = `images/` + student.image;
+  console.log("test");
   clone
     .querySelector("article")
     .addEventListener("click", () => showDetails(student));
@@ -354,9 +361,7 @@ function showDetails(student) {
     ".popupMember"
   ).textContent = `Member of inquisitorial squad: ${student.member}`;
   popup.querySelector(".popupExpelled").textContent = "Status: Enrolled";
-  popup.querySelector("img").src = `images/${
-    student.lastName
-  }_${student.firstName.charAt(0)}.png`;
+  popup.querySelector(".popupImg").src = `images/` + student.image;
 
   //When click on btn it makes student prefect
 
